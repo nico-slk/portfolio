@@ -1,20 +1,17 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
+import { Header } from './components/header/Header'
+import { NavBar } from './components/nav/NavBar'
+import { SideBar } from './components/sideBar/SideBar'
+import light from './assets/light.svg';
 
 function App() {
 
   return (
     <div className="App">
-      <div>
-        <a href="" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Project PORTFOLIO init</h1>
+      <NavBar />
+      <Header />
+      <img src={light} alt="light image" className='light_image_background'/>
+      <SideBar />
     </div>
   )
 }
