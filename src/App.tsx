@@ -1,10 +1,9 @@
-import './App.scss'
 import { Header } from './components/header/Header'
 import { NavBar } from './components/nav/NavBar'
 import { SideBar } from './components/sideBar/SideBar'
 import light from './assets/light.svg';
 
-function App() {
+const App = () => {
 
   return (
     <div className="App">
