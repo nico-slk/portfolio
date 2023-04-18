@@ -1,16 +1,18 @@
 import { Header } from './components/header/Header'
 import { NavBar } from './components/nav/NavBar'
 import { SideBar } from './components/sideBar/SideBar'
-import light from './assets/light.svg';
+import { CardList } from './components/cards/CardList'
+import { TechnologiesIcons } from './components/TechnologiesIcons'
 
 const App = () => {
 
   return (
-    <div className="App">
+    <div className="app">
       <NavBar />
       <Header />
-      <img src={light} alt="light image" className='light_image_background'/>
       <SideBar />
+      <CardList />
+      <TechnologiesIcons />
     </div>
   )
 }

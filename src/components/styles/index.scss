@@ -2,6 +2,8 @@
 @import './header.scss';
 @import './navbar.scss';
 @import './sidebar.scss';
+@import './card';
+@import './technologies';
 
 * {
   margin: 0;
@@ -14,15 +16,11 @@ body {
   color-scheme: light dark;
   background-color: $terciary-color;
   box-sizing: border-box;
+  max-width: 1920px;
+  min-width: 1900px;
+  margin: 0 auto;
   // .borderSolid {
   //   border: solid 1px $primary-color-light;
   //   box-sizing: border-box;
   // }
-}
-
-.light_image_background {
-  position: fixed;
-  right: -140px;
-  top: 160px;
-  z-index: -1;
 }
