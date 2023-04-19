@@ -5,6 +5,7 @@
 @import './card';
 @import './technologies';
 @import './experience';
+@import './contact';
 
 * {
   margin: 0;
@@ -20,8 +21,4 @@ body {
   max-width: 1920px;
   min-width: 1900px;
   margin: 0 auto;
-  // .borderSolid {
-  //   border: solid 1px $primary-color-light;
-  //   box-sizing: border-box;
-  // }
 }

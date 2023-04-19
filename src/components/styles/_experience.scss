@@ -1,24 +1,28 @@
-
 .experience {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 265px 0;
+
     &__titleBox {
         @extend .cardList__titleBox;
+
         &--underline {
             @extend .cardList__titleBox--underline;
         }
+
         &--title {
             @extend .cardList__titleBox--title;
         }
+
         padding-bottom: 0px;
     }
+
     &__box {
         display: flex;
         flex-direction: row;
-        // justify-content: space-between;
         height: 400px;
+
         &--lastExperience {
             display: flex;
             flex-direction: column;
@@ -30,15 +34,18 @@
                 display: flex;
                 margin-bottom: 8px;
                 font-size: 28px;
+
                 &__role {
                     font-family: $secondary-font;
                     color: $primary-color;
                 }
+
                 &__underline {
                     @extend .navbar--item__stick;
                     margin: 0 10px;
                     height: 28px;
                 }
+
                 &__companyName {
                     font-family: $secondary-font;
                 }
@@ -64,27 +71,31 @@
         background-color: $primary-color;
     }
 
-    &__formation{
+    &__formation {
         display: flex;
         flex-direction: column;
-        border: solid 1px #FFFDDD;
         width: 40%;
         padding-top: 50px;
+
         &--title {
             width: 100%;
         }
+
         &--box {
             margin: 50px;
-            .listItem{
+
+            .listItem {
                 display: flex;
                 flex-direction: row;
+
                 &__year {
                     color: $primary-color;
-                    font-size: 18px;
+                    font-size: $font-size-description;
                 }
 
                 &__stickAndPoint {
                     margin: 0 24px;
+
                     &--stick {
                         height: 50px;
                         width: 3px;
@@ -100,6 +111,7 @@
                         margin: 0 auto;
                     }
                 }
+
                 &__formationInfo {
                     display: flex;
                     flex-direction: column;
@@ -107,20 +119,24 @@
                     align-items: start;
                     font-family: $secondary-font;
                     line-height: 24px;
+
                     &--title {
-                        font-size: 18px;
+                        font-size: $font-size-description;
                         color: $primary-color;
                     }
+
                     &--trainer {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
+
                         .trainer__stick {
                             width: 3px;
-                            height: 18px;
-                            background-color: #FFFDDD;
+                            height: $font-size-description;
+                            background-color: $primary-color-light;
                             margin-right: 10px;
                         }
+
                         .trainer__name {
                             font-size: 14px;
                         }

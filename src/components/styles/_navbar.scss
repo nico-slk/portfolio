@@ -1,6 +1,6 @@
 .navbar {
   font-family: $secondary-font;
-  font-size: 18px;
+  font-size: $font-size-description;
 
   &__ul {
     display: flex;

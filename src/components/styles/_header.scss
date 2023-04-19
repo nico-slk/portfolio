@@ -63,7 +63,7 @@
     &__myDescription {
       display: flex;
       text-align: left;
-      font-size: 18px;
+      font-size: $font-size-description;
       line-height: 30px;
       margin-bottom: 50px;
       font-family: $primary-font;

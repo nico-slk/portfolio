@@ -1,0 +1,141 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 120px;
+
+    &__titleBox {
+        @extend .cardList__titleBox;
+
+        &--underline {
+            @extend .cardList__titleBox--underline;
+        }
+
+        &--title {
+            @extend .cardList__titleBox--title;
+        }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: row;
+
+        .contact__message {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            width: 50%;
+
+            &--textMessage {
+                text-align: start;
+                margin: 80px 50px 0 0;
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+            &--links {
+                display: flex;
+                flex-direction: row;
+                margin-top: 90px;
+
+                ul {
+                    li {
+                        list-style-type: none;
+
+                        svg {
+                            font-size: 36px;
+                        }
+
+                        a {
+                            display: flex;
+                            text-decoration: none;
+                            align-items: center;
+                            margin: 28px 0;
+
+                            p {
+                                margin-left: 20px;
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact__formBox {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+
+            &--form {
+
+                .form {
+
+                    &__input {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0 0 24px 0;
+                        width: 600px;
+
+                        &--label {
+                            text-align: start;
+                            margin: 0 0 16px 8px;
+                            font-size: 24px;
+                            font-family: $secondary-font;
+                        }
+
+                        &--name,
+                        &--email {
+                            background-color: $terciary-color;
+                            border: solid 1px $primary-color;
+                            border-radius: 10px;
+                            padding-left: 24px;
+                            font-weight: 400;
+                            font-size: $font-size-description;
+                            height: 56px;
+
+                            &:focus {
+                                background-color: $terciary-color;
+                            }
+                        }
+                    }
+
+                    &__textArea {
+                        @extend .form__input;
+
+                        &--textAreaLabel {
+                            @extend .form__input--label;
+                        }
+
+                        &--message {
+                            height: 240px;
+                            border-radius: 10px;
+                            padding: 24px;
+                            font-size: 20px;
+                            overflow: scroll;
+                            resize: none;
+                            overflow-x: hidden;
+                            background-color: $terciary-color;
+                            font-family: $primary-font;
+                            border: solid 1px $primary-color;
+
+                            &:focus {
+                                background-color: $terciary-color;
+                            }
+
+                            &::-webkit-scrollbar {
+                                width: .3em;
+                                margin: 20px;
+                            }
+
+                            &::-webkit-scrollbar-thumb {
+                                -webkit-box-shadow: inset 0 0 6px $terciary-color;
+                                border-radius: 10px;
+                                background-color: $primary-color-light;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
