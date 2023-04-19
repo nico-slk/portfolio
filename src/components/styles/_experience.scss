@@ -1,0 +1,132 @@
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 265px 0;
+    &__titleBox {
+        @extend .cardList__titleBox;
+        &--underline {
+            @extend .cardList__titleBox--underline;
+        }
+        &--title {
+            @extend .cardList__titleBox--title;
+        }
+        padding-bottom: 0px;
+    }
+    &__box {
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        height: 400px;
+        &--lastExperience {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: 60%;
+
+            .lastCompany {
+                display: flex;
+                margin-bottom: 8px;
+                font-size: 28px;
+                &__role {
+                    font-family: $secondary-font;
+                    color: $primary-color;
+                }
+                &__underline {
+                    @extend .navbar--item__stick;
+                    margin: 0 10px;
+                    height: 28px;
+                }
+                &__companyName {
+                    font-family: $secondary-font;
+                }
+            }
+        }
+
+        .date {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        .description {
+            margin-top: 30px;
+            width: 80%;
+            @extend .presentation--box__myDescription;
+        }
+    }
+
+    &__verticalLine {
+        height: 100%;
+        width: 2px;
+        background-color: $primary-color;
+    }
+
+    &__formation{
+        display: flex;
+        flex-direction: column;
+        border: solid 1px #FFFDDD;
+        width: 40%;
+        padding-top: 50px;
+        &--title {
+            width: 100%;
+        }
+        &--box {
+            margin: 50px;
+            .listItem{
+                display: flex;
+                flex-direction: row;
+                &__year {
+                    color: $primary-color;
+                    font-size: 18px;
+                }
+
+                &__stickAndPoint {
+                    margin: 0 24px;
+                    &--stick {
+                        height: 50px;
+                        width: 3px;
+                        background-color: $primary-color-light;
+                        margin: 0 auto;
+                    }
+
+                    &--point {
+                        width: 12px;
+                        height: 12px;
+                        background-color: $primary-color-light;
+                        border-radius: 100%;
+                        margin: 0 auto;
+                    }
+                }
+                &__formationInfo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: start;
+                    font-family: $secondary-font;
+                    line-height: 24px;
+                    &--title {
+                        font-size: 18px;
+                        color: $primary-color;
+                    }
+                    &--trainer {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        .trainer__stick {
+                            width: 3px;
+                            height: 18px;
+                            background-color: #FFFDDD;
+                            margin-right: 10px;
+                        }
+                        .trainer__name {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
