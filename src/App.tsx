@@ -6,8 +6,7 @@ import { TechnologiesIcons } from './components/TechnologiesIcons'
 import { Experience } from './components/experience/Experience'
 import { Contact } from './components/contact/Contact'
 
-const App = () => {
-
+const App = (): JSX.Element => {
   return (
     <div className="app">
       <NavBar />

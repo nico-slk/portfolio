@@ -1,5 +1,5 @@
 
-export const NavBar = () => {
+export const NavBar = (): JSX.Element => {
   return (
     <div className="navbar borderSolid">
       <ul className="navbar__ul">

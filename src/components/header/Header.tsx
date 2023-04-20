@@ -1,7 +1,7 @@
 import { Presentation } from './Presentation'
 import { Introduction } from './Introduction'
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <div className="header">
       <div className="header__content">

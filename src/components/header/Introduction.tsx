@@ -1,7 +1,7 @@
 import computer from '../../assets/computer.svg';
-import light from '../../assets/light.svg';
+// import light from '../../assets/light.svg';
 
-export const Introduction = () => {
+export const Introduction = (): JSX.Element => {
   return (
     <div className="introduction borderSolid">
       <img src={computer} alt="computer image" />

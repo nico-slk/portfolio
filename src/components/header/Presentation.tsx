@@ -1,6 +1,6 @@
 import downloadCV from '../../assets/downloadCV.svg';
 
-export const Presentation = () => {
+export const Presentation = (): JSX.Element => {
   return (
     <div className='presentation borderSolid'>
       <div className='presentation__content'>
