@@ -1,7 +1,22 @@
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
+import { firebaseTest } from '../../services/firebase/firebase'
+import { useState } from 'react'
 
 export const Contact = (): JSX.Element => {
+  const [file, setFile] = useState<React.ChangeEvent<HTMLInputElement>>();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>, file: any): void => {
+    event.preventDefault();
+    const { files } = file.target
+    if (files !== null) {
+      const fileName = files[0].name
+      void firebaseTest(files[0], fileName);
+    } else {
+      console.error('There was an error at upload file');
+    }
+  }
+
   return (
     <div className="contact">
       <div className="contact__titleBox">
@@ -42,7 +57,7 @@ export const Contact = (): JSX.Element => {
 
         <div className="contact__formBox">
           <div className="contact__formBox--form">
-            <form action="form" autoComplete="off">
+            <form action="form" autoComplete="off" onSubmit={(event): void => { handleSubmit(event, file) }}>
               <div className="form__input">
                 <label
                   htmlFor="nombre"
@@ -85,6 +100,8 @@ export const Contact = (): JSX.Element => {
                   rows={5}
                   placeholder="Ingresa tu mensaje."
                 />
+                <input type="file" name="" id="" onChange={setFile} />
+                <button type="submit">Enviar</button>
               </div>
             </form>
           </div>

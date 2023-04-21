@@ -10,10 +10,7 @@
     "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project": [
-            "./tsconfig.json"
-        ]
+        "sourceType": "module"
     },
     "plugins": [
         "react"
@@ -43,6 +40,8 @@
         "@typescript-eslint/triple-slash-reference": "off"
     },
     "ignorePatterns": [
-        "vite.config.ts"
+        "vite.config.ts",
+        "tsconfig.dev.json",
+        "./functions/src/index.ts"
     ]
 }
