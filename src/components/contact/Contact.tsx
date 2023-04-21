@@ -11,7 +11,7 @@ export const Contact = (): JSX.Element => {
     const { files } = file.target
     if (files !== null) {
       const fileName = files[0].name
-      void firebaseTest(files[0], fileName);
+      void firebaseTest(files[0], fileName).then(() => { file.target.value = null });
     } else {
       console.error('There was an error at upload file');
     }
