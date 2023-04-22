@@ -1,13 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import {
-  getStorage,
-  ref,
-  uploadBytes
-} from 'firebase/storage';
-import {
-  getFirestore
-} from 'firebase/firestore'
+import { getStorage } from 'firebase/storage';
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_PORTFOLIO_FIREBASE_APIKEY,
@@ -23,14 +17,3 @@ export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-
-export const firebaseTest = async (file: any, fileName: string): Promise<void> => {
-  const storage = getStorage();
-  const storageRef = ref(storage, `images/${fileName}`);
-  try {
-    const snapshot = await uploadBytes(storageRef, file)
-    console.log(snapshot)
-  } catch (error) {
-    console.log(error)
-  }
-}

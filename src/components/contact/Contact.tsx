@@ -1,19 +1,65 @@
-import { HiOutlineMail } from 'react-icons/hi'
-import { SiGithub, SiLinkedin } from 'react-icons/si'
-import { firebaseTest } from '../../services/firebase/firebase'
+import { uploadFile, messageToEmail } from '../../services/firebase/contactMessageService'
 import { useState } from 'react'
+import { type ContactForm } from '../../interfaces/types'
+import { ContactLinks } from './ContactLinks'
+import { checkAllowedFileFormat } from '../../customLodash/customLodash'
 
 export const Contact = (): JSX.Element => {
-  const [file, setFile] = useState<React.ChangeEvent<HTMLInputElement>>();
+  const [formValues, setFormValues] = useState<ContactForm>({
+    name: '',
+    email: '',
+    message: '',
+    file: null
+  })
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>, file: any): void => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const { files } = file.target
-    if (files !== null) {
-      const fileName = files[0].name
-      void firebaseTest(files[0], fileName).then(() => { file.target.value = null });
+    const { name, email, message, file } = formValues
+
+    if (file !== null) {
+      if (file.size > 625000) {
+        throw new Error('The file size should be less than 5Mb.');
+      }
+      if (!checkAllowedFileFormat(file.name)) {
+        throw new Error('The file extention is not allowed.');
+      }
+      console.log(file);
+      const fileName = file.name
+      void uploadFile(file, fileName)
+      event.target[3].value = '';
+      console.log(event);
+      void messageToEmail(email, name, message, file.name);
     } else {
-      console.error('There was an error at upload file');
+      void messageToEmail(email, name, message, '');
+    }
+
+    setFormValues({
+      name: '',
+      email: '',
+      message: '',
+      file: null
+    })
+
+    event.target[0].value = '';
+    event.target[1].value = '';
+    event.target[2].value = '';
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>): void => {
+    setFormValues({
+      ...formValues,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    try {
+      setFormValues({
+        ...formValues,
+        [event.target.name]: event.target.files?.[0]
+      });
+    } catch (error) {
+      console.error('There was an error at upload file: ', error);
     }
   }
 
@@ -25,39 +71,10 @@ export const Contact = (): JSX.Element => {
       </div>
 
       <div className="contact__box">
-        <div className="contact__message">
-          <div className="contact__message--textMessage">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Molestias vero facilis impedit repudiandae at commodi
-            perspiciatis aspernatur ipsam obcaecati debitis tempore
-            assumenda, similique nesciunt magni quam expedita animi
-            temporibus veritatis.
-          </div>
-          <div className="contact__message--links">
-            <ul>
-              <li>
-                <a href="#">
-                  <SiGithub /> <p>nico-slk</p>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:">
-                  <HiOutlineMail />
-                  <p>nicolas.selicki@gmail.com</p>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <SiLinkedin /> <p>Nicolas Selicki</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+        <ContactLinks />
         <div className="contact__formBox">
           <div className="contact__formBox--form">
-            <form action="form" autoComplete="off" onSubmit={(event): void => { handleSubmit(event, file) }}>
+            <form action="form" autoComplete="off" onSubmit={(event): void => { handleSubmit(event) }}>
               <div className="form__input">
                 <label
                   htmlFor="nombre"
@@ -68,8 +85,11 @@ export const Contact = (): JSX.Element => {
                 <input
                   type="text"
                   className="form__input--name"
+                  name="name"
                   id="nombre"
-                  placeholder="Ingresa tu nombre."
+                  placeholder="Ingresa tu nombre. (Obligatorio)"
+                  // required={true}
+                  onChange={handleChange}
                   autoComplete="off"
                 />
               </div>
@@ -83,8 +103,11 @@ export const Contact = (): JSX.Element => {
                 <input
                   type="email"
                   className="form__input--email"
+                  name="email"
                   id="email"
-                  placeholder="Ingresa tu email."
+                  placeholder="Ingresa tu email. (Obligatorio)"
+                  // required={true}
+                  onChange={handleChange}
                 />
               </div>
               <div className="form__textArea">
@@ -97,10 +120,13 @@ export const Contact = (): JSX.Element => {
                 <textarea
                   className="form__textArea--message"
                   id="textArea"
+                  name="message"
                   rows={5}
-                  placeholder="Ingresa tu mensaje."
+                  placeholder="Ingresa tu mensaje. (Obligatorio)"
+                  // required={true}
+                  onChange={handleChange}
                 />
-                <input type="file" name="" id="" onChange={setFile} />
+                <input type="file" name="file" id="" onChange={handleFileChange} />
                 <button type="submit">Enviar</button>
               </div>
             </form>
