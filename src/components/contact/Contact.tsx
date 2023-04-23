@@ -126,11 +126,14 @@ export const Contact = (): JSX.Element => {
                   // required={true}
                   onChange={handleChange}
                 />
-                <input type="file" name="file" id="" onChange={handleFileChange} />
-                <button type="submit">Enviar</button>
+                <div className='form__input--buttons'>
+                  <input className='form__input--buttons__addFile' type="file" name="file" id="" onChange={handleFileChange} />
+                  <button className='form__input--buttons__submit' type="submit">Enviar</button>
+                </div>
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </div>
