@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { uploadFile, messageToEmail } from '../../services/firebase/contactMessageService'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { type ContactForm } from '../../interfaces/types'
 import { ContactLinks } from './ContactLinks'
 import { checkAllowedFileFormat } from '../../customLodash/customLodash'
+import { Button } from '../common/Button'
 
 export const Contact = (): JSX.Element => {
+  const [fileInfo, setFileInfo] = useState<JSX.Element>(<p className='fileMessage__normal'>No has seleccionado ningun archivo</p>)
   const [formValues, setFormValues] = useState<ContactForm>({
     name: '',
     email: '',
@@ -17,17 +20,20 @@ export const Contact = (): JSX.Element => {
     const { name, email, message, file } = formValues
 
     if (file !== null) {
-      if (file.size > 625000) {
-        throw new Error('The file size should be less than 5Mb.');
-      }
       if (!checkAllowedFileFormat(file.name)) {
-        throw new Error('The file extention is not allowed.');
+        setFileInfo(<p className='fileMessage__fileExtentionError'>El tipo de archivo no está permitido</p>)
+        // throw new Error('The file extention is not allowed.');
+        return
       }
-      console.log(file);
+      if (file.size > 625000) {
+        setFileInfo(<p className='fileMessage__fileSizeError'>El archivo debe pesar menos de 5Mb</p>)
+        // throw new Error('The file size should be less than 5Mb.');
+        return
+      }
+
       const fileName = file.name
       void uploadFile(file, fileName)
       event.target[3].value = '';
-      console.log(event);
       void messageToEmail(email, name, message, file.name);
     } else {
       void messageToEmail(email, name, message, '');
@@ -58,10 +64,17 @@ export const Contact = (): JSX.Element => {
         ...formValues,
         [event.target.name]: event.target.files?.[0]
       });
+      setFileInfo(<p className='fileMessage__normal'>{event.target.files?.[0].name}</p>)
     } catch (error) {
       console.error('There was an error at upload file: ', error);
     }
   }
+
+  useEffect(() => {
+    if (formValues.file != null) {
+      setFileInfo(<p className='fileMessage__normal'>{formValues.file.name}</p>)
+    }
+  }, [])
 
   return (
     <div className="contact">
@@ -127,13 +140,20 @@ export const Contact = (): JSX.Element => {
                   onChange={handleChange}
                 />
                 <div className='form__input--buttons'>
-                  <input className='form__input--buttons__addFile' type="file" name="file" id="" onChange={handleFileChange} />
-                  <button className='form__input--buttons__submit' type="submit">Enviar</button>
+                  <div>
+                    <label htmlFor="fileInput" className='form__input--buttons__addFile'>
+                      Subir archivo
+                    </label>
+                    <input className='' type="file" name="file" id="fileInput" onChange={handleFileChange} />
+                    {fileInfo}
+                  </div>
+                  <Button fn={(): any => { }} >
+                    ENVIAR
+                  </Button>
                 </div>
               </div>
             </form>
           </div>
-
         </div>
       </div>
     </div>

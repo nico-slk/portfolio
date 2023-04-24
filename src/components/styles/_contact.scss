@@ -1,7 +1,7 @@
 .contact {
     display: flex;
     flex-direction: column;
-    margin-bottom: 120px;
+    margin: 25px 0 25px 0;
 
     &__titleBox {
         @extend .cardList__titleBox;
@@ -92,7 +92,6 @@
                             font-weight: 400;
                             font-size: $font-size-description;
                             height: 56px;
-
                             &:focus {
                                 background-color: $terciary-color;
                             }
@@ -102,28 +101,44 @@
                             flex-direction: row;
                             justify-content: space-between;
                             margin-top: 30px;
+                            input[type="file"] {
+                                display: none;
+                            }
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: start;
+                                .fileMessage__normal {
+                                    margin: 10px 0 0 0;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                }
+                                .fileMessage__fileSizeError {
+                                    @extend .fileMessage__normal;
+                                    color: rgb(253, 126, 126);
+                                }
+                                .fileMessage__fileExtentionError {
+                                    @extend .fileMessage__normal;
+                                    color: rgb(253, 126, 126);
+                                }
+                            }
                             &__addFile {
                                 color: rgba(255, 253, 221, 0.7);
                                 width: 200px;
-                                // height: 50px;
-                                &::file-selector-button {
-                                    width: 200px;
-                                    height: 50px;
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    align-items: center;
-                                    border-radius: 8px;
+                                height: 50px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                border-radius: 8px;
+                                transition: all .2s ease;
+                                color: $terciary-color;
+                                background-color: $primary-color;
+                                border: solid 2px $terciary-color;
+                                &:hover {
+                                    cursor: pointer;
                                     transition: all .2s ease;
-                                    color: $terciary-color;
-                                    background-color: $primary-color;
-                                    border: solid 1px $primary-color;
-                                    margin-bottom: 5px;
-                                    &:hover {
-                                        cursor: pointer;
-                                        transition: all .2s ease;
-                                        background-color: $primary-color-light;
-                                    }
+                                    border: solid 2px $terciary-color;
+                                    background-color: $primary-color-light;
                                 }
                             }
                             

@@ -9,10 +9,6 @@ export const CardList = (): JSX.Element => {
       </div>
       <div className='cardList__list'>
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
     </div>
   )

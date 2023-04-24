@@ -21,35 +21,40 @@
     &__box {
         display: flex;
         flex-direction: row;
-        height: 400px;
+        min-height: 400px;
 
-        &--lastExperience {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
+        &--experienceDetail {
             width: 60%;
-
-            .lastCompany {
+            padding-top: 80px;
+            
+            &--lastExperience {
                 display: flex;
-                margin-bottom: 8px;
-                font-size: 28px;
-
-                &__role {
-                    font-family: $secondary-font;
-                    color: $primary-color;
-                }
-
-                &__underline {
-                    @extend .navbar--item__stick;
-                    margin: 0 10px;
-                    height: 28px;
-                }
-
-                &__companyName {
-                    font-family: $secondary-font;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+    
+                .lastCompany {
+                    display: flex;
+                    margin-bottom: 8px;
+                    font-size: 28px;
+    
+                    &__role {
+                        font-family: $secondary-font;
+                        color: $primary-color;
+                    }
+    
+                    &__underline {
+                        @extend .navbar--item__stick;
+                        margin: 0 10px;
+                        height: 28px;
+                    }
+    
+                    &__companyName {
+                        font-family: $secondary-font;
+                    }
                 }
             }
+
         }
 
         .date {
@@ -65,20 +70,17 @@
         }
     }
 
-    &__verticalLine {
-        height: 100%;
-        width: 2px;
-        background-color: $primary-color;
-    }
-
     &__formation {
         display: flex;
         flex-direction: column;
         width: 40%;
-        padding-top: 50px;
+        padding-top: 20px;
+        border-left: solid 2px $primary-color;
 
         &--title {
             width: 100%;
+            font-size: 32px;
+            font-family: $secondary-font;
         }
 
         &--box {

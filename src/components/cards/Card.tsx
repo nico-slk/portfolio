@@ -1,6 +1,7 @@
 import { SiMysql, SiPostgresql, SiRedux } from 'react-icons/si'
 import { FaJava } from 'react-icons/fa'
 import forwardIcon from '../../assets/forwardIcon.svg'
+import { Button } from '../common/Button'
 
 const Card = (): JSX.Element => {
   const techs = [<SiMysql key={'SiMysql'} />, <SiRedux key={'SiRedux'} />, <SiPostgresql key={'SiPostgresql'} />, <FaJava key={'FaJava'} />]
@@ -22,17 +23,14 @@ const Card = (): JSX.Element => {
           <div className="card__box--content__icons">
             {techs.map((tech) => tech)}
           </div>
-          <button
-            type="submit"
-            className="card__box--content__button"
-          >
+          <Button fn={(): any => { }} >
             VER PROYECTO
             <img
               src={forwardIcon}
               alt="forward_icon"
               className="button_forwardIcon"
             />
-          </button>
+          </Button>
         </div>
       </div>
     </div>
