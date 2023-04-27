@@ -1,27 +1,25 @@
-import { SiMysql, SiPostgresql, SiRedux } from 'react-icons/si'
-import { FaJava } from 'react-icons/fa'
+// import { SiMysql, SiPostgresql, SiRedux } from 'react-icons/si'
+// import { FaJava } from 'react-icons/fa'
 import forwardIcon from '../../assets/forwardIcon.svg'
+import { type Tech } from '../../interfaces/types';
 import { Button } from '../common/Button'
 
-const Card = (): JSX.Element => {
-  const techs = [<SiMysql key={'SiMysql'} />, <SiRedux key={'SiRedux'} />, <SiPostgresql key={'SiPostgresql'} />, <FaJava key={'FaJava'} />]
+const Card = (props: any): JSX.Element => {
+  // const techs = [<SiMysql key={'SiMysql'} />, <SiRedux key={'SiRedux'} />, <SiPostgresql key={'SiPostgresql'} />, <FaJava key={'FaJava'} />]
 
   return (
     <div className="card">
       <div className="card__box">
         <div className="card__box--content">
           <h4 className="card__box--content__title">
-            Web page example
+            {props.project.name}
           </h4>
           <p className="card__box--content__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus, atque. Asperiores numquam, veniam ad
-            laborum sit harum consequatur, dolorum magnam mollitia
-            odio perferendis! Laborum facere qui vel accusantium
-            doloremque magnam.
+            {props.project.description}
           </p>
           <div className="card__box--content__icons">
-            {techs.map((tech) => tech)}
+            {/* {techs.map((tech) => tech)} */}
+            {props.t.map((e: Tech) => e.id)}
           </div>
           <Button fn={(): any => { }} >
             VER PROYECTO

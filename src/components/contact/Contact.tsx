@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { uploadFile, messageToEmail } from '../../services/firebase/contactMessageService'
 import { useEffect, useState } from 'react'
+import { uploadFile, messageToEmail } from '../../services/firebase/contactMessageService'
 import { type ContactForm } from '../../interfaces/types'
 import { ContactLinks } from './ContactLinks'
 import { checkAllowedFileFormat } from '../../customLodash/customLodash'
@@ -15,7 +15,7 @@ export const Contact = (): JSX.Element => {
     file: null
   })
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement> | any): void => {
     event.preventDefault();
     const { name, email, message, file } = formValues
 
@@ -101,7 +101,7 @@ export const Contact = (): JSX.Element => {
                   name="name"
                   id="nombre"
                   placeholder="Ingresa tu nombre. (Obligatorio)"
-                  // required={true}
+                  required={true}
                   onChange={handleChange}
                   autoComplete="off"
                 />
@@ -119,7 +119,7 @@ export const Contact = (): JSX.Element => {
                   name="email"
                   id="email"
                   placeholder="Ingresa tu email. (Obligatorio)"
-                  // required={true}
+                  required={true}
                   onChange={handleChange}
                 />
               </div>
@@ -136,7 +136,7 @@ export const Contact = (): JSX.Element => {
                   name="message"
                   rows={5}
                   placeholder="Ingresa tu mensaje. (Obligatorio)"
-                  // required={true}
+                  required={true}
                   onChange={handleChange}
                 />
                 <div className='form__input--buttons'>

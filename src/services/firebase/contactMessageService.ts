@@ -31,21 +31,3 @@ export const messageToEmail = async (email: string, subject: string, body: strin
     console.error('Error: ', error);
   }
 }
-
-// export const writeUserData = async (
-//   userId: string,
-//   name: string,
-//   lastName: string,
-//   age: number
-// ): Promise<void> => {
-//   const testData = {
-//     id: userId,
-//     name,
-//     lastName,
-//     age
-//   }
-//   const dbRef = doc(db, 'test', testData.id);
-
-//   await setDoc(dbRef, testData)
-//   console.log('Data test created!');
-// }

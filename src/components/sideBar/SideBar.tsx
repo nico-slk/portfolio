@@ -4,13 +4,17 @@ import linkedInLogo from '../../assets/linkedInLogo.svg';
 import arrow1 from '../../assets/arrow1.svg';
 
 export const SideBar = (): JSX.Element => {
+  const handleNavigation = (x: number, y: number): void => {
+    window.scroll(x, y)
+  }
+
   return (
     <div className="floating-sidebar">
       <ul className="floating-sidebar--ul">
         <li className=''>
-          <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
+          <div className="sidebar-icon-link-div " onClick={(): void => { handleNavigation(0, 0); }}>
             <img src={arrow1} alt="back_home" />
-          </a>
+          </div>
         </li>
         <li className=''>
           <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">

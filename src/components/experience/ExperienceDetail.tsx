@@ -1,16 +1,19 @@
+import { type Experience_ES } from '../../interfaces/types';
 
-export const ExperienceDetail = (): JSX.Element => {
+export const ExperienceDetail = (props: any): JSX.Element => {
   return (
-    <div className='experience__box--experienceDetail--lastExperience'>
-      <div className='lastCompany'>
-        <span className='lastCompany__role'>JUNIOR FRONTEND DEVELOPER</span>
-        <div className='lastCompany__underline'></div>
-        <span className='lastCompany__companyName'>GLOBALLOGIC</span>
+    props.experiences_ES.map((e: Experience_ES): JSX.Element => (
+      <div className='experience__box--experienceDetail--lastExperience' key={e.position}>
+        <div className='lastCompany' >
+          <span className='lastCompany__role'>{e.position.toUpperCase()}</span>
+          <div className='lastCompany__underline'></div>
+          <span className='lastCompany__companyName'>{e.company.toUpperCase()}</span>
+        </div>
+        <div className='date'>{e.startDate_ES} - {e.endDate_ES}</div>
+        <div className='description'>
+          {e.description_ES}
+        </div>
       </div>
-      <div className='date'>Jun 2021 - Nov 2022</div>
-      <div className='description'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dicta eius veniam nesciunt fuga nobis laborum minima reprehenderit eum debitis quam, asperiores cupiditate quod? Assumenda non praesentium placeat voluptates ad?
-      </div>
-    </div>
+    ))
   )
 }
