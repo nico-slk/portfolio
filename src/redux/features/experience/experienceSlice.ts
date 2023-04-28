@@ -1,15 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { type Experience_EN, type Experience_ES } from '../../../interfaces/types';
+
+const experiences: Experience_ES[] | Experience_EN[] = [];
 
 export const experienceSlice = createSlice({
   name: 'experience',
-  initialState: [],
+  initialState: {
+    experiences,
+    isLoading: true
+  },
   reducers: {
     getExperiences: (state, action) => {
-      state = action.payload;
-      console.log(state);
+      state.isLoading = false
+      state.experiences = action.payload;
     }
   }
 })
 
-export const { getExperiences } = experienceSlice.actions
 export default experienceSlice.actions

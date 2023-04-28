@@ -19,7 +19,7 @@ const Card = (props: any): JSX.Element => {
           </p>
           <div className="card__box--content__icons">
             {/* {techs.map((tech) => tech)} */}
-            {props.t.map((e: Tech) => e.id)}
+            {props.technologies.map((e: Tech) => e.id)}
           </div>
           <Button fn={(): any => { }} >
             VER PROYECTO

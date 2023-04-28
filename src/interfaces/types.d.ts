@@ -12,7 +12,6 @@ export interface ButtonProps {
 export interface Experience_EN {
   company: string
   position: string
-
   startDate_EN: string
   endDate_EN: string
   description_EN: string
@@ -21,7 +20,6 @@ export interface Experience_EN {
 export interface Experience_ES {
   company: string
   position: string
-
   startDate_ES: string
   endDate_ES: string
   description_ES: string
