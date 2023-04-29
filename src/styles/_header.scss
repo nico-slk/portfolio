@@ -1,5 +1,5 @@
 .header {
-  margin-top: 50px;
+  margin: 120px 0 60px 0;
 
   &__content {
     display: flex;
@@ -16,11 +16,9 @@
 }
 
 .introduction {
-  // .light_image_background {    
-  //   position: absolute;
-  //   left: 700px;
-  //   z-index: -1;
-  // }
+  img {
+    width: 80%;
+  }
 }
 
 .presentation {
@@ -28,6 +26,7 @@
   &--box {
     display: flex;
     flex-direction: column;
+    margin-right: 30px;
 
     &__myName {
       display: flex;

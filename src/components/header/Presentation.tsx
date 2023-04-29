@@ -3,7 +3,7 @@ import { Button } from '../common/Button';
 
 export const Presentation = (): JSX.Element => {
   return (
-    <div className='presentation borderSolid'>
+    <div className='presentation'>
       <div className='presentation__content'>
         <div className="presentation--box">
           <h4 className="presentation--box__myName">

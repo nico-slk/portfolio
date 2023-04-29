@@ -9,7 +9,7 @@ const CardList = ({ getAllProjects, project }: any): JSX.Element => {
   }, [getAllProjects])
 
   return (
-    <div className='cardList'>
+    <div className='cardList' id="project">
       <div className='cardList__titleBox'>
         <div className='cardList__titleBox--underline'></div>
         <h1 className='cardList__titleBox--title'>PROYECTOS</h1>

@@ -48,3 +48,7 @@ export interface Formation_EN {
   title: string
   organization_EN: string
 }
+
+export interface Language {
+  lang: string
+}

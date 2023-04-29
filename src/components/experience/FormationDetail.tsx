@@ -4,8 +4,6 @@ import { type Formation_ES } from '../../interfaces/types'
 import { getFormationES } from '../../services/firebase/formationService';
 
 const FormationDetail = ({ getFormationES, formation }: any): JSX.Element => {
-  console.log(formation);
-
   useEffect(() => {
     getFormationES()
   }, [getFormationES])
@@ -14,7 +12,7 @@ const FormationDetail = ({ getFormationES, formation }: any): JSX.Element => {
     (formation.isLoading === false)
       ? formation.formation.map((e: Formation_ES): JSX.Element => (
         <div className="listItem" key={e.title}>
-          <span className="listItem__year">{(e.year.length > 0) ? e.year : 'XXXX'}</span>
+          <span className="listItem__year">{(e.year.length > 0) ? e.year : 'xxxx'}</span>
           <div className="listItem__stickAndPoint">
             <div className="listItem__stickAndPoint--point"></div>
             <div className="listItem__stickAndPoint--stick"></div>

@@ -77,7 +77,7 @@ export const Contact = (): JSX.Element => {
   }, [])
 
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <div className="contact__titleBox">
         <div className="contact__titleBox--underline"></div>
         <h1 className="contact__titleBox--title">¡CHARLEMOS!</h1>

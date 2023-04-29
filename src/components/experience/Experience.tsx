@@ -8,7 +8,7 @@ const Experience = (): JSX.Element => {
   // SINO, EN ESPAÑOL. AL CLICKEAR EN 'ENGLISH', EL ESTADO GENERAL SE INVIERTE
 
   return (
-    <div className='experience'>
+    <div className='experience' id="experience">
 
       <div className='experience__titleBox'>
         <div className='experience__titleBox--underline'></div>
