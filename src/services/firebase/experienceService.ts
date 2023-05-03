@@ -20,7 +20,7 @@ export const getExperiencesES = (): any => async (dispatch: any): Promise<void> 
 }
 
 export const getExperiencesEN = (): any => async (dispatch: any): Promise<void> => {
-  const dbRef = collection(db, 'experiences_ES');
+  const dbRef = collection(db, 'experiences_EN');
   const docArr: Experience_EN[] = []
   const docsResponse = await getDocs(dbRef)
   docsResponse.forEach((doc: QueryDocumentSnapshot<DocumentData>): void => {

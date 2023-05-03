@@ -19,7 +19,7 @@ export const getFormationES = (): any => async (dispatch: any): Promise<void> =>
 }
 
 export const getFormationEN = (): any => async (dispatch: any): Promise<void> => {
-  const dbRef = collection(db, 'formation_ES');
+  const dbRef = collection(db, 'formation_EN');
   const docArr: Formation_EN[] = []
   const docsResponse = await getDocs(dbRef)
   docsResponse.forEach((doc: QueryDocumentSnapshot<DocumentData>): void => {

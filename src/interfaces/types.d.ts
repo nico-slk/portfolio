@@ -52,3 +52,39 @@ export interface Formation_EN {
 export interface Language {
   lang: string
 }
+
+export interface NavLanguage {
+  project: string
+  experience: string
+  contact: string
+  language: string
+}
+
+export interface CardListLanguage {
+  sectionTitle: string
+}
+
+export interface ButtonValue {
+  buttonValue: string
+}
+
+export interface ExperienceLanguage {
+  experience: string
+  formation: string
+}
+
+interface LanguagesString {
+  language: string
+}
+
+interface ExperienceArray {
+  experiences: Experience_EN[] | Experience_ES[]
+}
+
+export interface ExperienceDetailProps {
+  getExperiencesES: () => void
+  getExperiencesEN: () => void
+  experience: ExperienceArray
+  languages: LanguagesString
+  getLanguage: () => void
+}

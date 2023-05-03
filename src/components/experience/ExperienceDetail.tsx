@@ -1,18 +1,30 @@
-import { useEffect } from 'react'
+import { type ReactElement, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { type Experience_ES } from '../../interfaces/types';
-import { getExperiencesES } from '../../services/firebase/experienceService';
+import { type ExperienceDetailProps } from '../../interfaces/types';
+import { getExperiencesEN, getExperiencesES } from '../../services/firebase/experienceService';
+import { getLanguage } from '../../services/firebase/languageService';
 
-const ExperienceDetail = (props: any): JSX.Element => {
-  const { getExperiencesES, experience } = props;
+const ExperienceDetail = ({ getExperiencesES, getExperiencesEN, experience, languages, getLanguage }: ExperienceDetailProps): ReactElement<JSX.Element | JSX.Element[]> => {
+  const handleLanguageChange = async (): Promise<void> => {
+    if (languages.language === 'es') {
+      getExperiencesES()
+    } else {
+      getExperiencesEN()
+    }
+  }
 
   useEffect(() => {
-    getExperiencesES()
-  }, [getExperiencesES])
+    getLanguage()
+    void handleLanguageChange()
+  }, [languages])
 
-  return (
-    (experience.isLoading === false)
-      ? experience.experiences.map((e: Experience_ES): JSX.Element => (
+  if (experience.experiences.length <= 0) {
+    return <p>Loading...</p>
+  }
+
+  if (languages.language === 'es') {
+    return <>
+      {experience.experiences.map((e: any): JSX.Element =>
         <div className='experience__box--experienceDetail--lastExperience' key={e.position}>
           <div className='lastCompany' >
             <span className='lastCompany__role'>{e.position.toUpperCase()}</span>
@@ -24,17 +36,40 @@ const ExperienceDetail = (props: any): JSX.Element => {
             {e.description_ES}
           </div>
         </div>
-      ))
-      : <p>Loading...</p>
-  )
+      )}
+    </>
+  }
+
+  if (languages.language === 'en') {
+    return <>
+      {experience.experiences.map((e: any): JSX.Element =>
+        <div className='experience__box--experienceDetail--lastExperience' key={e.position}>
+          <div className='lastCompany' >
+            <span className='lastCompany__role'>{e.position.toUpperCase()}</span>
+            <div className='lastCompany__underline'></div>
+            <span className='lastCompany__companyName'>{e.company.toUpperCase()}</span>
+          </div>
+          <div className='date'>{e.startDate_EN} - {e.endDate_EN}</div>
+          <div className='description'>
+            {e.description_EN}
+          </div>
+        </div>
+      )}
+    </>
+  }
+
+  return <></>
 }
 
 const stateToProp = (state: any): any => ({
-  experience: state.experience
+  experience: state.experience,
+  languages: state.languages
 });
 
 const dispatchToProp = {
-  getExperiencesES
+  getExperiencesES,
+  getExperiencesEN,
+  getLanguage
 };
 
 export default connect(stateToProp, dispatchToProp)(ExperienceDetail);
