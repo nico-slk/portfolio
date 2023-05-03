@@ -4,7 +4,13 @@ import { type ExperienceDetailProps } from '../../interfaces/types';
 import { getExperiencesEN, getExperiencesES } from '../../services/firebase/experienceService';
 import { getLanguage } from '../../services/firebase/languageService';
 
-const ExperienceDetail = ({ getExperiencesES, getExperiencesEN, experience, languages, getLanguage }: ExperienceDetailProps): ReactElement<JSX.Element | JSX.Element[]> => {
+const ExperienceDetail = ({
+  getExperiencesES,
+  getExperiencesEN,
+  experience,
+  languages,
+  getLanguage
+}: ExperienceDetailProps): ReactElement<JSX.Element | JSX.Element[]> => {
   const handleLanguageChange = async (): Promise<void> => {
     if (languages.language === 'es') {
       getExperiencesES()

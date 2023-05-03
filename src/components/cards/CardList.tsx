@@ -5,7 +5,12 @@ import { getAllProjects } from '../../services/firebase/projectService'
 import { type CardListLanguage } from '../../interfaces/types'
 import { getLanguage } from '../../services/firebase/languageService';
 
-const CardList = ({ getAllProjects, project, getLanguage, languages }: any): JSX.Element => {
+const CardList = ({
+  getAllProjects,
+  project,
+  getLanguage,
+  languages
+}: any): JSX.Element => {
   const [lang, setLang] = useState<CardListLanguage>({
     sectionTitle: ''
   })

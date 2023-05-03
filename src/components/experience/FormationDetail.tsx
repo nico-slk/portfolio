@@ -1,10 +1,16 @@
 import { type ReactElement, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { type Formation_EN, type Formation_ES } from '../../interfaces/types'
+import { type FormationDetailProps } from '../../interfaces/types'
 import { getFormationES, getFormationEN } from '../../services/firebase/formationService';
 import { getLanguage } from '../../services/firebase/languageService';
 
-const FormationDetail = ({ getFormationES, getFormationEN, formation, languages, getLanguage }: any): ReactElement<JSX.Element | JSX.Element[]> => {
+const FormationDetail = ({
+  getFormationES,
+  getFormationEN,
+  formation,
+  languages,
+  getLanguage
+}: FormationDetailProps): ReactElement<JSX.Element | JSX.Element[]> => {
   const handleLanguageChange = async (): Promise<void> => {
     if (languages.language === 'es') {
       getFormationES()
@@ -18,13 +24,13 @@ const FormationDetail = ({ getFormationES, getFormationEN, formation, languages,
     void handleLanguageChange()
   }, [getLanguage, languages])
 
-  if (formation.isLoading === false && formation.formation.length <= 0) {
+  if (!formation.isLoading && formation.formation.length <= 0) {
     return <p>Loading...</p>
   }
 
   if (languages.language === 'es') {
     return <>
-      {formation.formation.map((e: Formation_ES): JSX.Element =>
+      {formation.formation.map((e: any): JSX.Element =>
         <div className="listItem" key={e.title}>
           <span className="listItem__year">{(e.year.length > 0) ? e.year : 'xxxx'}</span>
           <div className="listItem__stickAndPoint">
@@ -50,7 +56,7 @@ const FormationDetail = ({ getFormationES, getFormationEN, formation, languages,
   if (languages.language === 'en') {
     return <>
       {
-        formation.formation.map((e: Formation_EN): JSX.Element =>
+        formation.formation.map((e: any): JSX.Element =>
           <div className="listItem" key={e.title}>
             <span className="listItem__year">{(e.year.length > 0) ? e.year : 'xxxx'}</span>
             <div className="listItem__stickAndPoint">

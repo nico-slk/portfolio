@@ -40,7 +40,16 @@
       &--underline {
         display: block;
         width: 240px;
-        margin-left: 155px;
+        margin-left: 160px;
+        height: 4px;
+        background-color: $primary-color;
+        box-shadow: 0px 0px 5px 1px $primary-color-light;
+        border-radius: 5px;
+      }
+      &--underlineEN {
+        display: block;
+        width: 240px;
+        margin-left: 185px;
         height: 4px;
         background-color: $primary-color;
         box-shadow: 0px 0px 5px 1px $primary-color-light;

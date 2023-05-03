@@ -77,6 +77,11 @@ interface LanguagesString {
   language: string
 }
 
+interface CustomComponentProps {
+  languages: LanguagesString
+  getLanguage: () => void
+}
+
 interface ExperienceArray {
   experiences: Experience_EN[] | Experience_ES[]
 }
@@ -87,4 +92,44 @@ export interface ExperienceDetailProps {
   experience: ExperienceArray
   languages: LanguagesString
   getLanguage: () => void
+}
+
+interface FormationArray {
+  isLoading: boolean
+  formation: Formation_EN[] | Formation_ES[]
+}
+
+export interface FormationDetailProps {
+  getFormationES: () => void
+  getFormationEN: () => void
+  formation: FormationArray
+  languages: LanguagesString
+  getLanguage: () => void
+}
+
+export interface TechnologieTitle {
+  technologieTitle: string
+}
+
+export interface ContactDetailLanguage {
+  fileTypeError: string
+  fileSizeError: string
+  noFileSelected: string
+  title: string
+  name: string
+  email: string
+  message: string
+  uploadFile: string
+  placeholderName: string
+  placeholderEmail: string
+  placeholderMessage: string
+}
+
+export interface ContactDetailLanguageLinks {
+  contactMessage: string
+}
+
+export interface HeaderLanguage {
+  preTitle: string
+  presentationMessage: string
 }

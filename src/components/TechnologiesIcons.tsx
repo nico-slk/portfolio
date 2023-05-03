@@ -1,11 +1,41 @@
+import { getLanguage } from '../services/firebase/languageService';
 import { SiExpress, SiJavascript, SiMysql, SiPostgresql, SiReact, SiRedux, SiSpring } from 'react-icons/si';
 import { FaJava, FaNodeJs } from 'react-icons/fa';
+import { connect } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { type CustomComponentProps, type TechnologieTitle } from '../interfaces/types';
 
-export const TechnologiesIcons = (): JSX.Element => {
+export const TechnologiesIcons = ({
+  languages,
+  getLanguage
+}: CustomComponentProps): JSX.Element => {
+  const [lang, setLang] = useState<TechnologieTitle>({
+    technologieTitle: ''
+  })
+  const handleLanguageChange = (): void => {
+    const esp: TechnologieTitle = {
+      technologieTitle: 'TECNOLOGIAS QUE TRABAJO'
+    }
+    const eng: TechnologieTitle = {
+      technologieTitle: 'TECHNOLOGIES THAT I USE'
+    }
+
+    if (languages.language === 'es') {
+      setLang(esp)
+    } else {
+      setLang(eng)
+    }
+  }
+
+  useEffect(() => {
+    getLanguage()
+    handleLanguageChange()
+  }, [getLanguage, languages])
+
   return (
     <div className="technologiesList">
       <h1 className="technologiesList__title">
-        TECNOLOGIAS QUE TRABAJO
+        {lang.technologieTitle}
       </h1>
       <div className="technologiesList__box">
         <SiSpring />
@@ -21,3 +51,13 @@ export const TechnologiesIcons = (): JSX.Element => {
     </div>
   )
 }
+
+const stateToProp = (state: any): any => ({
+  languages: state.languages
+});
+
+const dispatchToProp = {
+  getLanguage
+};
+
+export default connect(stateToProp, dispatchToProp)(TechnologiesIcons);

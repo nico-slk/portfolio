@@ -5,7 +5,10 @@ import { connect } from 'react-redux';
 import ExperienceDetail from './ExperienceDetail'
 import FormationDetail from './FormationDetail'
 
-const Experience = ({ languages, getLanguage }: any): JSX.Element => {
+const Experience = ({
+  languages,
+  getLanguage
+}: any): JSX.Element => {
   const [lang, setLang] = useState<ExperienceLanguage>({
     experience: '',
     formation: ''

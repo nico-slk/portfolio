@@ -5,13 +5,15 @@ import { type ButtonValue, type Tech } from '../../interfaces/types';
 import { Button } from '../common/Button'
 import { useEffect, useState } from 'react';
 
-const Card = (props: any): JSX.Element => {
+const Card = ({
+  project,
+  technologies,
+  language
+}: any): JSX.Element => {
   // const techs = [<SiMysql key={'SiMysql'} />, <SiRedux key={'SiRedux'} />, <SiPostgresql key={'SiPostgresql'} />, <FaJava key={'FaJava'} />]
   const [lang, setLang] = useState<ButtonValue>({
     buttonValue: ''
   })
-
-  const { project, technologies, language } = props;
 
   const handleLanguageChange = (): void => {
     const esp: ButtonValue = {

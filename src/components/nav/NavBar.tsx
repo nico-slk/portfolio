@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import { getLanguage, setLanguage } from '../../services/firebase/languageService';
 import { type NavLanguage } from '../../interfaces/types';
 
-const NavBar = ({ getLanguage, setLanguage, languages }: any): JSX.Element => {
+const NavBar = ({
+  getLanguage,
+  setLanguage,
+  languages
+}: any): JSX.Element => {
   const [lang, setLang] = useState<NavLanguage>({
     project: '',
     experience: '',
