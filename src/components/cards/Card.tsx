@@ -53,6 +53,8 @@ export const Card = ({
         return <SiTypescript key={key} />
       case 'Firebase':
         return <SiFirebase key={key} />
+      default:
+        return <></>
     }
   }
 
@@ -79,6 +81,7 @@ export const Card = ({
             })}
           </div>
           <Button fn={(): any => {
+            console.log(project.link);
             if (project.link !== '') {
               window.open(`http://${project.link}`, '_blank')
             }

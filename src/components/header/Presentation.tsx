@@ -20,7 +20,9 @@ export const Presentation = ({
           <p className="presentation--box__myDescription">
             {information.presentationMessage}
           </p>
-          <Button fn={(): any => { void downloadResume() }} >
+          <Button fn={async (): Promise<any> => {
+            window.open(await downloadResume(), '_blank')
+          }} >
             {langButton.buttonValue}  <img src={downloadCV} alt="" />
           </Button>
         </div>

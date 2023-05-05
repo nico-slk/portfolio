@@ -1,33 +1,17 @@
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from './firebase';
 
-export const downloadResume = async (): Promise<void> => {
-  const pathRef = ref(storage, 'resume/Nicolas Selicki CV 2023 EN.pdf');
+export const downloadResume = async (): Promise<string> => {
+  const gsReference = ref(storage, 'gs://portfolio-slk2023.appspot.com/resume/Nicolas Selicki CV 2023 EN.pdf');
+  let urlFile = ''
 
-  try {
-    const url = await getDownloadURL(pathRef)
-    const xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = (event) => {
-    };
-    xhr.open('GET', url);
-    xhr.send();
-  } catch (error: any) {
-    switch (error.code) {
-      case 'storage/object-not-found':
-        console.log('storage/object-not-found');
+  await getDownloadURL(gsReference)
+    .then((url) => {
+      urlFile = url
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
-        break;
-      case 'storage/unauthorized':
-        console.log('storage/unauthorized');
-        break;
-      case 'storage/canceled':
-        console.log('storage/canceled');
-        break;
-
-      case 'storage/unknown':
-        console.log('storage/unknown');
-        break;
-    }
-  }
+  return urlFile;
 }
