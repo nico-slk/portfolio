@@ -8,7 +8,7 @@ import Contact from './components/contact/Contact'
 
 const App = (): JSX.Element => {
   return (
-    <div className="app">
+    <main className="app">
       <NavBar />
       <Header />
       <SideBar />
@@ -16,7 +16,7 @@ const App = (): JSX.Element => {
       <TechnologiesIcons />
       <Experience />
       <Contact />
-    </div>
+    </main>
   )
 }
 

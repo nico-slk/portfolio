@@ -9,7 +9,7 @@ export const SideBar = (): JSX.Element => {
   }
 
   return (
-    <div className="floating-sidebar">
+    <aside className="floating-sidebar">
       <ul className="floating-sidebar--ul">
         <li className=''>
           <div className="sidebar-icon-link-div " onClick={(): void => { handleNavigation(0, 0); }}>
@@ -33,6 +33,6 @@ export const SideBar = (): JSX.Element => {
         </li>
       </ul>
       <div className="floating-sidebar__vertical-line"></div>
-    </div>
+    </aside>
   )
 }

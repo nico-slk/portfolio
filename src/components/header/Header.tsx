@@ -48,7 +48,7 @@ const Header = ({
   }, [getLanguage, languages])
 
   return (
-    <div className="header">
+    <section className="header">
       <div className="header__content">
         <div className="header--presentation">
           <Presentation langButton={langButton} information={lang} language={languages.language} />
@@ -57,7 +57,7 @@ const Header = ({
           <Introduction />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

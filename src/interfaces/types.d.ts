@@ -28,6 +28,7 @@ export interface Experience_ES {
 export interface Project {
   name: string
   description: string
+  link?: string
   technologies: Tech[]
 }
 
@@ -35,6 +36,7 @@ export interface Tech {
   id: string
   value: string
   isChecked: boolean
+  component: string
 }
 
 export interface Formation_ES {

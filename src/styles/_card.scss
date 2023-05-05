@@ -1,5 +1,4 @@
-
-.card{
+.card {
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -22,18 +21,19 @@
                 display: flex;
                 text-align: left;
                 margin-bottom: 24px;
-                height: 60px;
+                height: 80px;
                 width: 100%;
                 white-space: normal;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                font-size: 16px;
             }
             &__icons {
                 margin-bottom: 42px;
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
-                font-size: 36px;
+                font-size: 30px;
                 width: 100%;
                 svg {
                     margin-right: 16px;

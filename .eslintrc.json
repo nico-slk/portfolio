@@ -39,6 +39,7 @@
                 ]
             }
         ],
+        "@typescript-eslint/restrict-template-expressions": "off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/semi": "off",
         "@typescript-eslint/triple-slash-reference": "off"

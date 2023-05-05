@@ -46,7 +46,7 @@ const NavBar = ({
   }, [getLanguage, languages])
 
   return (
-    <div className="navbar borderSolid">
+    <nav className="navbar borderSolid">
       <ul className="navbar__ul">
         <li className="navbar--item" onClick={(): void => { handleNavigation('#project') }}>{lang.project}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#experience') }}>{lang.experience}</li>
@@ -65,7 +65,7 @@ const NavBar = ({
           handleLanguageChange()
         }}>{lang.language}</li>
       </ul>
-    </div >
+    </nav >
   )
 }
 

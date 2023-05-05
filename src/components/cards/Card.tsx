@@ -1,16 +1,15 @@
-// import { SiMysql, SiPostgresql, SiRedux } from 'react-icons/si'
-// import { FaJava } from 'react-icons/fa'
+import { useEffect, useState } from 'react';
 import forwardIcon from '../../assets/forwardIcon.svg'
 import { type ButtonValue, type Tech } from '../../interfaces/types';
 import { Button } from '../common/Button'
-import { useEffect, useState } from 'react';
+import { SiExpress, SiFirebase, SiJavascript, SiMysql, SiPostgresql, SiReact, SiRedux, SiSpring, SiTypescript } from 'react-icons/si';
+import { FaJava, FaNodeJs } from 'react-icons/fa';
 
-const Card = ({
+export const Card = ({
   project,
   technologies,
   language
 }: any): JSX.Element => {
-  // const techs = [<SiMysql key={'SiMysql'} />, <SiRedux key={'SiRedux'} />, <SiPostgresql key={'SiPostgresql'} />, <FaJava key={'FaJava'} />]
   const [lang, setLang] = useState<ButtonValue>({
     buttonValue: ''
   })
@@ -30,9 +29,36 @@ const Card = ({
     }
   }
 
+  const technologiesFilter = (tech: string, key: string): JSX.Element => {
+    switch (tech) {
+      case 'Java':
+        return <FaJava key={key} />
+      case 'Node.js':
+        return <FaNodeJs key={key} />
+      case 'Springboot':
+        return <SiSpring key={key} />
+      case 'MySQL':
+        return <SiMysql key={key} />
+      case 'Redux':
+        return <SiRedux key={key} />
+      case 'PostreSQL':
+        return <SiPostgresql key={key} />
+      case 'Express':
+        return <SiExpress key={key} />
+      case 'React':
+        return <SiReact key={key} />
+      case 'JavaScript':
+        return <SiJavascript key={key} />
+      case 'TypeScript':
+        return <SiTypescript key={key} />
+      case 'Firebase':
+        return <SiFirebase key={key} />
+    }
+  }
+
   useEffect(() => {
     handleLanguageChange()
-  }, [language])
+  }, [language, project])
 
   return (
     <div className="card">
@@ -45,10 +71,18 @@ const Card = ({
             {project.description}
           </p>
           <div className="card__box--content__icons">
-            {/* {techs.map((tech) => tech)} */}
-            {technologies.map((e: Tech) => e.id)}
+            {technologies.map((e: Tech): JSX.Element => {
+              if (e.isChecked) {
+                return technologiesFilter(e.value, e.id)
+              }
+              return <></>
+            })}
           </div>
-          <Button fn={(): any => { }} >
+          <Button fn={(): any => {
+            if (project.link !== '') {
+              window.open(`http://${project.link}`, '_blank')
+            }
+          }}>
             {lang.buttonValue}
             <img
               src={forwardIcon}
@@ -61,5 +95,3 @@ const Card = ({
     </div>
   )
 }
-
-export default Card;

@@ -1,4 +1,4 @@
-import Card from './Card'
+import { Card } from './Card'
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { getAllProjects } from '../../services/firebase/projectService'
@@ -37,7 +37,7 @@ const CardList = ({
   }, [getAllProjects, getLanguage, languages])
 
   return (
-    <div className='cardList' id="project">
+    <section className='cardList' id="project">
       <div className='cardList__titleBox'>
         <div className='cardList__titleBox--underline'></div>
         <h1 className='cardList__titleBox--title'>{lang.sectionTitle}</h1>
@@ -45,7 +45,7 @@ const CardList = ({
       <div className='cardList__list'>
         {(project.isLoading === false) ? project.project.map((project: any) => <Card project={project} key={project.name} technologies={project.technologies} language={languages.language} />) : <p>Loading...</p>}
       </div>
-    </div>
+    </section>
   )
 }
 

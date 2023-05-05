@@ -146,7 +146,7 @@ const Contact = ({
   }, [languages, getLanguage])
 
   return (
-    <div className="contact" id="contact">
+    <section className="contact" id="contact">
       <div className="contact__titleBox">
         <div className="contact__titleBox--underline"></div>
         <h1 className="contact__titleBox--title">{lang.title}</h1>
@@ -225,7 +225,7 @@ const Contact = ({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

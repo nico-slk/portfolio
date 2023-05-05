@@ -1,4 +1,5 @@
 import downloadCV from '../../assets/downloadCV.svg';
+import { downloadResume } from '../../services/firebase/downloadResume';
 import { Button } from '../common/Button';
 
 export const Presentation = ({
@@ -19,7 +20,7 @@ export const Presentation = ({
           <p className="presentation--box__myDescription">
             {information.presentationMessage}
           </p>
-          <Button fn={(): any => { }} >
+          <Button fn={(): any => { void downloadResume() }} >
             {langButton.buttonValue}  <img src={downloadCV} alt="" />
           </Button>
         </div>

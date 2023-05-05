@@ -1,5 +1,5 @@
 import { getLanguage } from '../services/firebase/languageService';
-import { SiExpress, SiJavascript, SiMysql, SiPostgresql, SiReact, SiRedux, SiSpring } from 'react-icons/si';
+import { SiExpress, SiFirebase, SiJavascript, SiMysql, SiPostgresql, SiReact, SiRedux, SiSpring, SiTypescript } from 'react-icons/si';
 import { FaJava, FaNodeJs } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -33,7 +33,7 @@ export const TechnologiesIcons = ({
   }, [getLanguage, languages])
 
   return (
-    <div className="technologiesList">
+    <section className="technologiesList">
       <h1 className="technologiesList__title">
         {lang.technologieTitle}
       </h1>
@@ -47,8 +47,10 @@ export const TechnologiesIcons = ({
         <SiReact />
         <SiJavascript />
         <FaNodeJs />
+        <SiTypescript />
+        <SiFirebase />
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -37,7 +37,7 @@ const Experience = ({
   }, [languages, getLanguage])
 
   return (
-    <div className='experience' id="experience">
+    <section className='experience' id="experience">
 
       <div className='experience__titleBox'>
         <div className='experience__titleBox--underline'></div>
@@ -58,7 +58,7 @@ const Experience = ({
 
       </div>
 
-    </div>
+    </section>
   )
 }
 

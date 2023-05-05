@@ -11,7 +11,8 @@ export const getAllProjects = (): any => async (dispatch: any): Promise<void> =>
     docArr.push({
       name: doc.data().name,
       description: doc.data().description,
-      technologies: doc.data().technologies
+      technologies: doc.data().technologies,
+      link: doc.data().link
     })
   })
 
