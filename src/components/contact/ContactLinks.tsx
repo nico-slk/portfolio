@@ -37,18 +37,18 @@ export const ContactLinks = ({
       <div className="contact__message--links">
         <ul>
           <li>
-            <a href="#">
+            <a href="https://github.com/nico-slk">
               <SiGithub /> <p>nico-slk</p>
             </a>
           </li>
           <li>
-            <a href="mailto:">
+            <a href="mailto:nicolas.selicki@gmail.com">
               <HiOutlineMail />
               <p>nicolas.selicki@gmail.com</p>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/nicolas-selicki-web-fullstack/">
               <SiLinkedin /> <p>Nicolas Selicki</p>
             </a>
           </li>

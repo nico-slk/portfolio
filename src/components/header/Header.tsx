@@ -29,7 +29,7 @@ const Header = ({
       presentationMessage: 'Vivo en La Plata, Provincia de Buenos Aires, Argentina. Tengo un perfil orientado a resultados, proactivo y colaborativo, me gusta formar parte de equipos ambiciosos acompañado de grandes aprendizajes. "¡Siempre aprendiendo!" Intento adquirir nuevos conocimientos todos los dias para llegar a ser un desarrollador completo'
     }
     const eng: HeaderLanguage = {
-      preTitle: 'Hello! I am ',
+      preTitle: "Hello! I'm ",
       presentationMessage: 'Based in La Plata, Province of Buenos Aires, Argentina. I have a results-oriented, proactive and collaborative profile, I like to be part of ambitious teams accompanied by great learning. "Always learning!" I try to acquire new knowledge every day to become a complete developer.'
     }
 
