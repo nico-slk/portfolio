@@ -1,5 +1,5 @@
-import { Card } from './Card'
 import { useEffect, useState } from 'react'
+import { Card } from './Card'
 import { connect } from 'react-redux'
 import { getAllProjects } from '../../services/firebase/projectService'
 import { type CardListLanguage } from '../../interfaces/types'

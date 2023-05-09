@@ -1,6 +1,5 @@
 import { type ReactElement, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { type FormationDetailProps } from '../../interfaces/types'
 import { getFormationES, getFormationEN } from '../../services/firebase/formationService';
 import { getLanguage } from '../../services/firebase/languageService';
 
@@ -10,7 +9,7 @@ const FormationDetail = ({
   formation,
   languages,
   getLanguage
-}: FormationDetailProps): ReactElement<JSX.Element | JSX.Element[]> => {
+}: any): ReactElement<JSX.Element | JSX.Element[]> => {
   const handleLanguageChange = async (): Promise<void> => {
     if (languages.language === 'es') {
       getFormationES()
@@ -24,7 +23,7 @@ const FormationDetail = ({
     void handleLanguageChange()
   }, [getLanguage, languages])
 
-  if (!formation.isLoading && formation.formation.length <= 0) {
+  if (formation.isLoading === true && formation.formation.length <= 0) {
     return <p>Loading...</p>
   }
 

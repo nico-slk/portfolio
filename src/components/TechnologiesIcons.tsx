@@ -1,14 +1,14 @@
-import { getLanguage } from '../services/firebase/languageService';
 import { SiExpress, SiFirebase, SiJavascript, SiMysql, SiPostgresql, SiReact, SiRedux, SiSpring, SiTypescript } from 'react-icons/si';
 import { FaJava, FaNodeJs } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { type CustomComponentProps, type TechnologieTitle } from '../interfaces/types';
+import { type TechnologieTitle } from '../interfaces/types';
+import { getLanguage } from '../services/firebase/languageService';
 
-export const TechnologiesIcons = ({
-  languages,
-  getLanguage
-}: CustomComponentProps): JSX.Element => {
+const TechnologiesIcons = ({
+  getLanguage,
+  languages
+}: any): JSX.Element => {
   const [lang, setLang] = useState<TechnologieTitle>({
     technologieTitle: ''
   })

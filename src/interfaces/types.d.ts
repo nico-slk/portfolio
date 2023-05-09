@@ -79,35 +79,35 @@ interface LanguagesString {
   language: string
 }
 
-interface CustomComponentProps {
-  languages: LanguagesString
-  getLanguage: () => void
-}
+// interface CustomComponentProps {
+//   languages: LanguagesString
+//   getLanguage: () => void
+// }
 
 interface ExperienceArray {
   experiences: Experience_EN[] | Experience_ES[]
 }
 
-export interface ExperienceDetailProps {
-  getExperiencesES: () => void
-  getExperiencesEN: () => void
-  experience: ExperienceArray
-  languages: LanguagesString
-  getLanguage: () => void
-}
+// export interface ExperienceDetailProps {
+//   getExperiencesES: () => void
+//   getExperiencesEN: () => void
+//   experience: ExperienceArray
+//   languages: LanguagesString
+//   getLanguage: () => void
+// }
 
 interface FormationArray {
   isLoading: boolean
   formation: Formation_EN[] | Formation_ES[]
 }
 
-export interface FormationDetailProps {
-  getFormationES: () => void
-  getFormationEN: () => void
-  formation: FormationArray
-  languages: LanguagesString
-  getLanguage: () => void
-}
+// export interface FormationDetailProps {
+//   getFormationES: () => void
+//   getFormationEN: () => void
+//   formation: FormationArray
+//   languages: LanguagesString
+//   getLanguage: () => void
+// }
 
 export interface TechnologieTitle {
   technologieTitle: string

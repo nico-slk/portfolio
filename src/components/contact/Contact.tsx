@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { uploadFile, messageToEmail } from '../../services/firebase/contactMessageService'
 import { getLanguage } from '../../services/firebase/languageService';
-import { type CustomComponentProps, type ContactForm, type ButtonValue, type ContactDetailLanguage } from '../../interfaces/types'
+import { type ContactForm, type ButtonValue, type ContactDetailLanguage } from '../../interfaces/types'
 import { ContactLinks } from './ContactLinks'
 import { checkAllowedFileFormat } from '../../customLodash/customLodash'
 import { Button } from '../common/Button'
@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
 const Contact = ({
   languages,
   getLanguage
-}: CustomComponentProps): JSX.Element => {
+}: any): JSX.Element => {
   const [formValues, setFormValues] = useState<ContactForm>({
     name: '',
     email: '',
