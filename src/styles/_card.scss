@@ -48,7 +48,8 @@
     flex-direction: column;
     text-align: left;
     padding-top: 120px;
-    margin: 0px 180px;
+    // margin: 0px 180px;
+    grid-column: 2/14;
     &__titleBox {
         display: flex;
         flex-direction: row;

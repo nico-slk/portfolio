@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 265px 180px;
+    margin: 265px 0;
+    grid-column: 2/14;
 
     &__titleBox {
         @extend .cardList__titleBox;

@@ -1,13 +1,12 @@
 .floating-sidebar {
     position: sticky;
-    width: 32px;
     bottom: 0px;
-    left: 95%;
-    border: solid 1px #fffddd;
+    grid-column: 14/15;
+    display: flex;
+    flex-direction: column;
+    width: 32px;
+    justify-content: end;
 
-    &--box {
-        height: 400px;
-    }
     &--ul {
         list-style-type: none;
         width: 32px;

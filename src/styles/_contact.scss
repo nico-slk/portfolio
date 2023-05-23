@@ -1,7 +1,8 @@
 .contact {
     display: flex;
     flex-direction: column;
-    margin: 25px 180px;
+    margin: 25px 0 0 0;
+    grid-column: 2/14;
 
     &__titleBox {
         @extend .cardList__titleBox;

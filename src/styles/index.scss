@@ -19,7 +19,4 @@ body {
     color-scheme: light dark;
     background-color: $terciary-color;
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    margin: 0 auto;
 }

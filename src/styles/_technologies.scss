@@ -1,7 +1,8 @@
 .technologiesList {
     display: flex;
     flex-direction: column;
-    margin: 100px 180px 0 180px;
+    margin-top: 100px;
+    grid-column: 2/14;
 
     &__title {
         font-size: 24px;
@@ -19,7 +20,7 @@
         font-size: 48px;
         padding-top: 50px;
         svg {
-            margin: 0 24px;
+            margin: 0 2%;
             will-change: filter;
             transition: all 0.3s;
         }

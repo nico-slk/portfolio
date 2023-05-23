@@ -3,8 +3,8 @@ import Header from './components/header/Header'
 import { SideBar } from './components/sideBar/SideBar'
 import CardList from './components/cards/CardList'
 import TechnologiesIcons from './components/TechnologiesIcons'
-import Experience from './components/experience/Experience'
-import Contact from './components/contact/Contact'
+// import Experience from './components/experience/Experience'
+// import Contact from './components/contact/Contact'
 
 const App = (): JSX.Element => {
   return (
@@ -13,8 +13,8 @@ const App = (): JSX.Element => {
       <Header />
       <CardList />
       <TechnologiesIcons />
-      <Experience />
-      <Contact />
+      {/* <Experience /> */}
+      {/* <Contact /> */}
       <SideBar />
     </main>
   )

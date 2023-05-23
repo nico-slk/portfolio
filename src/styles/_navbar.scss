@@ -1,7 +1,8 @@
 .navbar {
     font-family: $secondary-font;
     font-size: $font-size-description;
-    margin: 0px 180px;
+    // margin: 0px 180px;
+    grid-column: 2/14;
 
     &__ul {
         display: flex;
