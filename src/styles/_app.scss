@@ -1,12 +1,17 @@
-$primary-color: #FEF63E;
-$primary-color-light: #FFFDDD;
-$terciary-color: #0A0A18;
-$primary-font: 'Inter', sans-serif;
-$secondary-font: 'Russo One', sans-serif;
+$primary-color: #fef63e;
+$primary-color-light: #fffddd;
+$terciary-color: #0a0a18;
+$primary-font: "Inter", sans-serif;
+$secondary-font: "Russo One", sans-serif;
 $font-size-description: 18px;
 
+.app {
+    margin: 50px 0;
+}
+
 #root {
-  margin: 0 auto;
-  padding: 50px 180px;
-  text-align: center;
+    margin: 0 auto;
+    text-align: center;
+    grid-column: 1/17;
+    max-width: 1980px;
 }

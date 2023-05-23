@@ -1,10 +1,18 @@
 .floating-sidebar {
-    position: fixed;
+    position: sticky;
     width: 32px;
-    bottom: 0;
-    right: 40px;
+    bottom: 0px;
+    left: 95%;
+    border: solid 1px #fffddd;
+
+    &--box {
+        height: 400px;
+    }
     &--ul {
         list-style-type: none;
+        width: 32px;
+        margin: 0 auto;
+
         li {
             margin-bottom: 26px;
             a {

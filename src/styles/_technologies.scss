@@ -1,8 +1,7 @@
-
-.technologiesList{
+.technologiesList {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin: 100px 180px 0 180px;
 
     &__title {
         font-size: 24px;
@@ -13,7 +12,7 @@
         letter-spacing: 0.04em;
     }
 
-    &__box{
+    &__box {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -22,9 +21,9 @@
         svg {
             margin: 0 24px;
             will-change: filter;
-            transition: all .3s;
+            transition: all 0.3s;
         }
-        svg:hover{
+        svg:hover {
             filter: drop-shadow(0 0 20px $primary-color);
         }
     }

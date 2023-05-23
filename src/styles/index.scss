@@ -1,25 +1,25 @@
-@import './app.scss';
-@import './header.scss';
-@import './navbar.scss';
-@import './sidebar.scss';
-@import './card';
-@import './technologies';
-@import './experience';
-@import './contact';
+@import "./app.scss";
+@import "./header.scss";
+@import "./navbar.scss";
+@import "./sidebar.scss";
+@import "./card";
+@import "./technologies";
+@import "./experience";
+@import "./contact";
 
 * {
-  margin: 0;
-  padding: 0;
-  color: $primary-color-light;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    color: $primary-color-light;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: $primary-font;
-  color-scheme: light dark;
-  background-color: $terciary-color;
-  box-sizing: border-box;
-  max-width: 1920px;
-  min-width: 1376px;
-  margin: 0 auto;
+    font-family: $primary-font;
+    color-scheme: light dark;
+    background-color: $terciary-color;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    margin: 0 auto;
 }

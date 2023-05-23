@@ -10,29 +10,31 @@ export const SideBar = (): JSX.Element => {
 
   return (
     <aside className="floating-sidebar">
-      <ul className="floating-sidebar--ul">
-        <li className=''>
-          <div className="sidebar-icon-link-div " onClick={(): void => { handleNavigation(0, 0); }}>
-            <img src={arrow1} alt="back_home" />
-          </div>
-        </li>
-        <li className=''>
-          <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
-            <img src={gitHubLogo} alt="gitHubLogo" />
-          </a>
-        </li>
-        <li className=''>
-          <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
-            <img src={message} alt="message" />
-          </a>
-        </li>
-        <li className=''>
-          <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
-            <img src={linkedInLogo} alt="linkedInLogo" />
-          </a>
-        </li>
-      </ul>
-      <div className="floating-sidebar__vertical-line"></div>
+      <div className="floating-sidebar--box">
+        <ul className="floating-sidebar--ul">
+          <li className=''>
+            <div className="sidebar-icon-link-div " onClick={(): void => { handleNavigation(0, 0); }}>
+              <img src={arrow1} alt="back_home" />
+            </div>
+          </li>
+          <li className=''>
+            <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
+              <img src={gitHubLogo} alt="gitHubLogo" />
+            </a>
+          </li>
+          <li className=''>
+            <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
+              <img src={message} alt="message" />
+            </a>
+          </li>
+          <li className=''>
+            <a href="http://" target="_blank" rel="noopener noreferrer" className="sidebar-icon-link ">
+              <img src={linkedInLogo} alt="linkedInLogo" />
+            </a>
+          </li>
+        </ul>
+        <div className="floating-sidebar__vertical-line"></div>
+      </div>
     </aside>
   )
 }

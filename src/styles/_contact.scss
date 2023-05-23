@@ -1,7 +1,7 @@
 .contact {
     display: flex;
     flex-direction: column;
-    margin: 25px 0 25px 0;
+    margin: 25px 180px;
 
     &__titleBox {
         @extend .cardList__titleBox;
@@ -67,9 +67,7 @@
             justify-content: center;
 
             &--form {
-
                 .form {
-
                     &__input {
                         display: flex;
                         flex-direction: column;
@@ -130,19 +128,19 @@
                                 flex-direction: column;
                                 justify-content: center;
                                 border-radius: 8px;
-                                transition: all .2s ease;
+                                transition: all 0.2s ease;
                                 color: $terciary-color;
                                 background-color: $primary-color;
                                 border: solid 2px $terciary-color;
                                 &:hover {
                                     cursor: pointer;
-                                    transition: all .2s ease;
+                                    transition: all 0.2s ease;
                                     border: solid 2px $terciary-color;
                                     background-color: $primary-color-light;
                                 }
                             }
-                            
-                            &__submit{
+
+                            &__submit {
                                 @extend .presentation--box__cvDownloadButton;
                             }
                         }
@@ -172,12 +170,13 @@
                             }
 
                             &::-webkit-scrollbar {
-                                width: .3em;
+                                width: 0.3em;
                                 margin: 20px;
                             }
 
                             &::-webkit-scrollbar-thumb {
-                                -webkit-box-shadow: inset 0 0 6px $terciary-color;
+                                -webkit-box-shadow: inset 0 0 6px
+                                    $terciary-color;
                                 border-radius: 10px;
                                 background-color: $primary-color-light;
                             }
