@@ -47,6 +47,7 @@
 
 .cardList {
     grid-column: 2/14;
+    margin-top: 150px;
 
     &__titleBox {
         display: flex;
@@ -86,7 +87,7 @@
 
 @include media-up(tablet) {
     .cardList {
-        padding-right: 20px;
+        grid-column: 2/13;
 
         &__list {
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -1,7 +1,6 @@
 .navbar {
     font-family: $secondary-font;
     font-size: $font-size-description;
-    // margin: 0px 180px;
     grid-column: 2/14;
 
     &__ul {
@@ -46,3 +45,11 @@
         }
     }
 }
+
+@include media-up(lweb) {}
+
+@include media-up(web) {}
+
+@include media-up(tablet) {}
+
+@include media-up(mobile) {}

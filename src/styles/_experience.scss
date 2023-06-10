@@ -178,7 +178,11 @@
 
 @include media-up(tablet) {
     .experience {
+        margin: 150px 0;
+
         &__box {
+
+            padding-top: 0px;
 
             &--experienceDetail {
                 grid-column: 1/15;
@@ -218,4 +222,8 @@
     }
 }
 
-@include media-up(mobile) {}
+@include media-up(mobile) {
+    .experience {
+        grid-column: 2/14;
+    }
+}
