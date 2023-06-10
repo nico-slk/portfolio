@@ -14,9 +14,19 @@ const NavBar = ({
     contact: '',
     language: ''
   })
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const handleNavigation = (selector: string): void => {
     const element = document.querySelector<HTMLElement>(selector);
     if (element !== null) window.scroll(0, element?.offsetTop)
+  }
+
+  const switchBurger = (): void => {
+    if (!isOpen) {
+      setIsOpen(true)
+    } else {
+      setIsOpen(false)
+    }
+    console.log(isOpen);
   }
 
   const handleLanguageChange = (): void => {
@@ -43,11 +53,18 @@ const NavBar = ({
   useEffect(() => {
     getLanguage()
     handleLanguageChange()
-  }, [getLanguage, languages])
+    console.log(isOpen);
+  }, [getLanguage, languages, setIsOpen])
 
   return (
-    <nav className="navbar borderSolid">
-      <ul className="navbar__ul">
+    <nav className="navbar">
+      <div className='burger' onClick={switchBurger}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      {/* <ul className="navbar__ul deployed_nav"> */}
+      <ul className={`navbar__ul ${!setIsOpen && 'not_deployed_nav'}`}>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#project') }}>{lang.project}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#experience') }}>{lang.experience}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#contact') }}>
