@@ -3,6 +3,15 @@
     font-size: $font-size-description;
     grid-column: 2/14;
 
+    .burger,
+    .navbar_menu {
+        display: none;
+    }
+
+    .not_deployed_nav {
+        display: flex;
+    }
+
     &__ul {
         display: flex;
         flex-direction: row;
@@ -23,6 +32,7 @@
             border-radius: 8px;
             padding: 8px 22px;
             transition: all 0.3s ease-out;
+            border-bottom: solid 1px #FFFFFF;
 
             &:hover {
                 transition: all 0.3s ease-out;
@@ -50,14 +60,7 @@
 
 @include media-up(web) {
     .navbar {
-        .burger>span {
-            background-color: antiquewhite;
-            display: block;
-            width: 40px;
-            height: 3px;
-        }
-
-        .not_deployed_nav {
+        .navbar_menu {
             display: none;
         }
     }
@@ -65,21 +68,49 @@
 
 @include media-up(tablet) {
     .navbar {
-        .burger {
-            height: 50px;
-        }
+        font-family: "Russo One", sans-serif;
+        font-size: 18px;
+        grid-column: 2/14;
+        display: flex;
+        border-radius: 8px;
 
         .burger>span {
-            background-color: antiquewhite;
+            background-color: $primary-color-light;
             display: block;
             width: 40px;
-            height: 3px;
-            margin-top: 8px;
-            margin-bottom: 4px;
+            height: 5px;
+            margin-top: 6px;
+            margin-bottom: 3px;
+        }
+
+        .navbar_menu {
+            display: flex;
+            text-align: center;
+            margin: 0 auto;
+            align-items: center;
         }
 
         .not_deployed_nav {
             display: none;
+        }
+
+        &__ul {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &--item {
+            transition: all 0.3s ease-out;
+            margin: 15px 0px 15px 0;
+
+            &__button {
+                font-size: 16px;
+            }
+
+            .stick_navbar {
+                height: 3px;
+                width: 40px;
+            }
         }
     }
 }

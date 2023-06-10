@@ -14,19 +14,18 @@ const NavBar = ({
     contact: '',
     language: ''
   })
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [deployed, setDeployed] = useState<string>('deployed')
   const handleNavigation = (selector: string): void => {
     const element = document.querySelector<HTMLElement>(selector);
     if (element !== null) window.scroll(0, element?.offsetTop)
   }
 
   const switchBurger = (): void => {
-    if (!isOpen) {
-      setIsOpen(true)
+    if (deployed === 'deployed') {
+      setDeployed('not-deployed')
     } else {
-      setIsOpen(false)
+      setDeployed('deployed')
     }
-    console.log(isOpen);
   }
 
   const handleLanguageChange = (): void => {
@@ -53,25 +52,19 @@ const NavBar = ({
   useEffect(() => {
     getLanguage()
     handleLanguageChange()
-    console.log(isOpen);
-  }, [getLanguage, languages, setIsOpen])
+  }, [getLanguage, languages, deployed])
 
   return (
     <nav className="navbar">
-      <div className='burger' onClick={switchBurger}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      {/* <ul className="navbar__ul deployed_nav"> */}
-      <ul className={`navbar__ul ${!setIsOpen && 'not_deployed_nav'}`}>
+      <ul className={`navbar__ul ${deployed !== 'deployed' ? 'not_deployed_nav' : deployed}`}>
+        <li className={`navbar--item" ${deployed !== 'deployed' ? 'not_deployed_nav' : deployed}`} onClick={switchBurger}>X</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#project') }}>{lang.project}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#experience') }}>{lang.experience}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#contact') }}>
           <button className="navbar--item__button">{lang.contact}</button>
         </li>
-        <li className="navbar--item" >
-          <div className="navbar--item__stick"></div>
+        <li className="navbar--item " >
+          <div className="navbar--item__stick stick_navbar"></div>
         </li>
         <li className="navbar--item" onClick={(): void => {
           if (languages.language === 'en') {
@@ -82,6 +75,8 @@ const NavBar = ({
           handleLanguageChange()
         }}>{lang.language}</li>
       </ul>
+
+      <span className={`navbar_menu ${deployed === 'deployed' ? 'not_deployed_nav' : deployed}`} onClick={switchBurger}>MENU</span>
     </nav >
   )
 }
