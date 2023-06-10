@@ -31,3 +31,15 @@
         }
     }
 }
+
+@include media-up(lweb) {}
+
+@include media-up(web) {}
+
+@include media-up(tablet) {
+    .technologiesList {
+        grid-column: 2/13;
+    }
+}
+
+@include media-up(mobile) {}

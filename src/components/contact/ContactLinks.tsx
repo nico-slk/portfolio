@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 import { type LanguagesString, type ContactDetailLanguageLinks } from '../../interfaces/types'
+import { FaWhatsapp } from 'react-icons/fa'
 
 export const ContactLinks = ({
   language
@@ -36,20 +37,25 @@ export const ContactLinks = ({
       </div>
       <div className="contact__message--links">
         <ul>
-          <li>
+          <li className='github'>
             <a href="https://github.com/nico-slk">
               <SiGithub /> <p>nico-slk</p>
             </a>
           </li>
-          <li>
+          <li className='mailto'>
             <a href="mailto:nicolas.selicki@gmail.com">
               <HiOutlineMail />
               <p>nicolas.selicki@gmail.com</p>
             </a>
           </li>
-          <li>
+          <li className='linkedin'>
             <a href="https://www.linkedin.com/in/nicolas-selicki-web-fullstack/">
               <SiLinkedin /> <p>Nicolas Selicki</p>
+            </a>
+          </li>
+          <li className='whapp'>
+            <a href="https://wa.me/5492255526270/">
+              <FaWhatsapp /> <p>+54 9 2255 526270</p>
             </a>
           </li>
         </ul>

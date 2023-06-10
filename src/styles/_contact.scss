@@ -1,10 +1,11 @@
 .contact {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
     margin: 25px 0 0 0;
-    grid-column: 2/14;
+    grid-column: 1/14;
 
     &__titleBox {
+        grid-column: 2/14;
         @extend .cardList__titleBox;
 
         &--underline {
@@ -17,28 +18,28 @@
     }
 
     &__box {
-        display: flex;
-        flex-direction: row;
+        grid-column: 2/14;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
 
         .contact__message {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            width: 50%;
+            grid-column: 1/4;
 
             &--textMessage {
                 text-align: start;
-                margin: 80px 50px 0 0;
+                margin: 40px 50px 0 0;
                 font-size: $font-size-description;
                 line-height: 30px;
             }
 
             &--links {
-                display: flex;
-                flex-direction: row;
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
                 margin-top: 90px;
 
                 ul {
+                    grid-column: 2/11;
+
                     li {
                         list-style-type: none;
 
@@ -63,9 +64,7 @@
         }
 
         .contact__formBox {
-            width: 50%;
-            display: flex;
-            justify-content: center;
+            grid-column: 4/7;
 
             &--form {
                 .form {
@@ -73,7 +72,6 @@
                         display: flex;
                         flex-direction: column;
                         margin: 0 0 24px 0;
-                        width: 600px;
 
                         &--label {
                             text-align: start;
@@ -91,36 +89,45 @@
                             font-weight: 400;
                             font-size: $font-size-description;
                             height: 56px;
+
                             &:focus {
                                 background-color: $terciary-color;
                             }
                         }
+
                         &--buttons {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
                             margin-top: 30px;
+
                             input[type="file"] {
                                 display: none;
                             }
+
                             div {
                                 display: flex;
                                 flex-direction: column;
                                 align-items: start;
+
                                 .fileMessage__normal {
                                     margin: 10px 0 0 0;
                                     font-size: 14px;
                                     font-weight: 400;
+                                    text-align: start
                                 }
+
                                 .fileMessage__fileSizeError {
                                     @extend .fileMessage__normal;
                                     color: rgb(253, 126, 126);
                                 }
+
                                 .fileMessage__fileExtentionError {
                                     @extend .fileMessage__normal;
                                     color: rgb(253, 126, 126);
                                 }
                             }
+
                             &__addFile {
                                 color: rgba(255, 253, 221, 0.7);
                                 width: 200px;
@@ -133,6 +140,7 @@
                                 color: $terciary-color;
                                 background-color: $primary-color;
                                 border: solid 2px $terciary-color;
+
                                 &:hover {
                                     cursor: pointer;
                                     transition: all 0.2s ease;
@@ -176,11 +184,151 @@
                             }
 
                             &::-webkit-scrollbar-thumb {
-                                -webkit-box-shadow: inset 0 0 6px
-                                    $terciary-color;
+                                -webkit-box-shadow: inset 0 0 6px $terciary-color;
                                 border-radius: 10px;
                                 background-color: $primary-color-light;
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-up(lweb) {}
+
+@include media-up(web) {
+    .contact {
+        &__box {
+            .contact__message {
+                &--textMessage {
+                    font-size: 14px;
+                }
+
+                &--links {
+                    margin-top: 40px;
+
+                    ul {
+                        li {
+                            a {
+                                p {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contact__formBox {
+
+                &--form {
+                    .form {
+                        &__input {
+                            &--buttons {
+                                &__addFile {
+                                    width: 140px;
+                                    height: 44px;
+                                }
+
+                                &__submit {
+                                    width: 140px;
+                                    height: 44px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-up(tablet) {
+    .contact {
+        &__box {
+            .contact__message {
+                &--textMessage {
+                    font-size: 14px;
+                }
+
+                &--links {
+                    margin-top: 40px;
+
+                    ul {
+                        display: grid;
+                        grid-template-columns: repeat(9, 1fr);
+
+                        .github {
+                            grid-column: 1/2;
+                        }
+
+                        .mailto {
+
+                            grid-column: 3/4;
+                        }
+
+                        .linkedin {
+                            grid-column: 5/6;
+                        }
+
+                        .whapp {
+
+                            grid-column: 7/8;
+                        }
+
+                        li {
+                            svg {
+                                font-size: 24px;
+                            }
+                        }
+
+                        a {
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@include media-up(mobile) {
+    .contact {
+        &__box {
+            .contact__message {
+                &--textMessage {
+                    font-size: 14px;
+                }
+
+                &--links {
+                    margin-top: 40px;
+
+                    ul {
+                        grid-column: 1/11;
+                        display: grid;
+                        grid-template-columns: repeat(10, 1fr);
+
+                        .github {
+                            grid-column: 1/2;
+                        }
+
+                        .mailto {
+
+                            grid-column: 3/4;
+                        }
+
+                        .linkedin {
+                            grid-column: 5/6;
+                        }
+
+                        .whapp {
+
+                            grid-column: 7/8;
                         }
                     }
                 }

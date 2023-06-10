@@ -166,6 +166,8 @@
 
             &__cvDownloadButton {
                 justify-self: center;
+                width: 140px;
+                height: 44px;
             }
         }
     }
@@ -182,7 +184,6 @@
             justify-items: center;
         }
 
-        // background-color: aqua;
         .introduction {
             display: none;
         }
@@ -191,7 +192,6 @@
 
 @include media-up(mobile) {
     .header {
-        background-color: blueviolet;
 
         .introduction {
             display: none;
