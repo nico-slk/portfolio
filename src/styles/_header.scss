@@ -18,6 +18,7 @@
 
 .presentation {
     padding: 0 70px 0 70px;
+
     &--box {
         display: grid;
         grid-template-columns: 1fr;
@@ -40,6 +41,7 @@
                 box-shadow: 0px 0px 5px 1px $primary-color-light;
                 border-radius: 5px;
             }
+
             &--underlineEN {
                 display: block;
                 width: 240px;
@@ -97,8 +99,7 @@
                 color: $terciary-color;
 
                 img {
-                    filter: invert(0%) sepia(0%) saturate(7500%)
-                        hue-rotate(327deg) brightness(0%) contrast(100%);
+                    filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(327deg) brightness(0%) contrast(100%);
                 }
             }
         }
@@ -107,6 +108,7 @@
 
 @include media-up(xlweb) {
     .header {
+
         // background-color: rgb(81, 219, 38);
         .introduction img {
             width: 80%;
@@ -114,6 +116,7 @@
             margin: 0 auto;
         }
     }
+
     .presentation {
         width: 80%;
         padding: 0;
@@ -132,30 +135,36 @@
 
 @include media-up(web) {
     .header {
-        // background-color: rgb(219, 104, 38);
+
         &--introduction {
-            // display: none;
+            align-content: start;
         }
     }
+
     .presentation {
         width: 95%;
         margin: 0;
+
         &--box {
             &__myName {
                 font-size: 24px;
+
                 &--underline,
                 &--underlineEN {
                     width: 180px;
                     margin-left: 120px;
                 }
             }
+
             &__myTitle {
                 margin-right: 0px;
                 font-size: 48px;
             }
+
             &__myDescription {
                 font-size: 14px;
             }
+
             &__cvDownloadButton {
                 justify-self: center;
             }
@@ -165,6 +174,15 @@
 
 @include media-up(tablet) {
     .header {
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &--presentation {
+            justify-items: center;
+        }
+
         // background-color: aqua;
         .introduction {
             display: none;
@@ -175,8 +193,21 @@
 @include media-up(mobile) {
     .header {
         background-color: blueviolet;
+
         .introduction {
             display: none;
+        }
+
+        .presentation {
+            &--box {
+                &__myName {
+                    align-items: center;
+                }
+
+                &__myTitle {
+                    text-align: center;
+                }
+            }
         }
     }
 }
