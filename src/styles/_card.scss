@@ -79,3 +79,20 @@
         grid-gap: 10px;
     }
 }
+
+@include media-up(lweb) {}
+
+@include media-up(web) {}
+
+@include media-up(tablet) {
+    .cardList {
+        padding-right: 20px;
+
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 10px;
+        }
+    }
+}
+
+@include media-up(mobile) {}
