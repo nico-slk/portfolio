@@ -3,13 +3,9 @@
     font-size: $font-size-description;
     grid-column: 2/14;
 
-    .burger,
-    .navbar_menu {
+    .navbar_menu,
+    .x {
         display: none;
-    }
-
-    .not_deployed_nav {
-        display: flex;
     }
 
     &__ul {
@@ -32,7 +28,7 @@
             border-radius: 8px;
             padding: 8px 22px;
             transition: all 0.3s ease-out;
-            border-bottom: solid 1px #FFFFFF;
+            border-bottom: solid 1px #ffffff;
 
             &:hover {
                 transition: all 0.3s ease-out;
@@ -56,42 +52,41 @@
     }
 }
 
-@include media-up(lweb) {}
+@include media-up(lweb) {
+}
 
 @include media-up(web) {
-    .navbar {
-        .navbar_menu {
-            display: none;
-        }
-    }
 }
 
 @include media-up(tablet) {
     .navbar {
         font-family: "Russo One", sans-serif;
-        font-size: 18px;
+        font-size: 20px;
         grid-column: 2/14;
         display: flex;
         border-radius: 8px;
-
-        .burger>span {
-            background-color: $primary-color-light;
-            display: block;
-            width: 40px;
-            height: 5px;
-            margin-top: 6px;
-            margin-bottom: 3px;
-        }
+        justify-content: end;
 
         .navbar_menu {
             display: flex;
-            text-align: center;
-            margin: 0 auto;
-            align-items: center;
+            svg {
+                font-size: 30px;
+            }
+        }
+
+        .x {
+            font-size: 30px;
         }
 
         .not_deployed_nav {
             display: none;
+        }
+
+        .deployed {
+            display: flex;
+            margin: 0 auto;
+            width: 100%;
+            justify-content: end;
         }
 
         &__ul {
@@ -102,6 +97,9 @@
         &--item {
             transition: all 0.3s ease-out;
             margin: 15px 0px 15px 0;
+            height: 40px;
+            align-items: center;
+            display: flex;
 
             &__button {
                 font-size: 16px;
@@ -115,4 +113,5 @@
     }
 }
 
-@include media-up(mobile) {}
+@include media-up(mobile) {
+}

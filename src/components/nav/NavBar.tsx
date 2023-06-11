@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
+import { SlMenu } from 'react-icons/Sl'
+import { TfiClose } from 'react-icons/Tfi'
 import { getLanguage, setLanguage } from '../../services/firebase/languageService';
 import { type NavLanguage } from '../../interfaces/types';
 
@@ -57,7 +59,7 @@ const NavBar = ({
   return (
     <nav className="navbar">
       <ul className={`navbar__ul ${deployed !== 'deployed' ? 'not_deployed_nav' : deployed}`}>
-        <li className={`navbar--item" ${deployed !== 'deployed' ? 'not_deployed_nav' : deployed}`} onClick={switchBurger}>X</li>
+        <li className={`navbar--item x ${deployed !== 'deployed' ? 'not_deployed_nav' : deployed}`} onClick={switchBurger}><TfiClose /></li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#project') }}>{lang.project}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#experience') }}>{lang.experience}</li>
         <li className="navbar--item" onClick={(): void => { handleNavigation('#contact') }}>
@@ -76,7 +78,7 @@ const NavBar = ({
         }}>{lang.language}</li>
       </ul>
 
-      <span className={`navbar_menu ${deployed === 'deployed' ? 'not_deployed_nav' : deployed}`} onClick={switchBurger}>MENU</span>
+      <span className={`navbar_menu ${deployed === 'deployed' ? 'not_deployed_nav' : deployed}`} onClick={switchBurger}><SlMenu /></span>
     </nav >
   )
 }
