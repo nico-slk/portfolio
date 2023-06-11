@@ -1,8 +1,7 @@
 .experience {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 265px 0;
+    display: grid;
+    margin-top: 150px;
+    grid-column: 2/14;
 
     &__titleBox {
         @extend .cardList__titleBox;
@@ -19,25 +18,21 @@
     }
 
     &__box {
-        display: flex;
-        flex-direction: row;
-        min-height: 400px;
-        margin-top: 50px;
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        text-align: start;
+        padding-top: 50px;
 
         &--experienceDetail {
-            width: 60%;
-            min-width: 700px;
-            padding-top: 30px;
+            grid-column: 1/9;
 
             &--lastExperience {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
+                padding-top: 50px;
 
                 .lastCompany {
                     display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     margin-bottom: 8px;
                     font-size: 28px;
 
@@ -73,40 +68,43 @@
     }
 
     &__formation {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
+        grid-column: 9/15;
         padding-top: 30px;
         border-left: solid 2px $primary-color;
 
         &--title {
-            width: 100%;
+            margin-left: 50px;
             font-size: 32px;
             font-family: $secondary-font;
         }
 
         &--box {
-            margin: 50px 0 50px 10%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            margin-top: 50px;
 
             .listItem {
-                display: flex;
-                flex-direction: row;
-                text-align: start;
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                grid-column: 1/13;
 
                 &__year {
-                    width: 70px;
+                    grid-column: 2/3;
                     color: $primary-color;
                     font-size: $font-size-description;
+                    min-width: 42px;
                 }
 
                 &__stickAndPoint {
-                    margin: 0 24px;
+                    grid-column: 3/4;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
 
                     &--stick {
-                        height: 90%;
+                        height: 110%;
                         width: 3px;
                         background-color: $primary-color-light;
-                        margin: 0 auto;
                     }
 
                     &--point {
@@ -114,30 +112,28 @@
                         height: 12px;
                         background-color: $primary-color-light;
                         border-radius: 100%;
-                        margin: 0 auto;
                     }
                 }
 
                 &__formationInfo {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: start;
+                    grid-column: 4/10;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
                     font-family: $secondary-font;
                     line-height: 24px;
-                    width: 100%;
                     margin-bottom: 20px;
 
                     &--title {
                         font-size: $font-size-description;
                         color: $primary-color;
+                        grid-column: 1/3;
                     }
 
                     &--trainer {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        width: 100%;
+                        grid-column: 1/3;
 
                         .trainer__stick {
                             width: 3px;
@@ -156,4 +152,84 @@
             }
         }
     }
+}
+
+@include media-up(xlweb) {
+    .header {
+        .introduction img {
+            width: 80%;
+            padding: 0;
+            margin: 0 auto;
+        }
+    }
+
+    .presentation {
+        width: 80%;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
+@include media-up(lweb) {
+}
+
+@include media-up(web) {
+}
+
+@include media-up(tablet) {
+    .experience {
+        margin-top: 150px;
+        grid-column: 2/13;
+
+        &__box {
+            padding-top: 0px;
+
+            &--experienceDetail {
+                grid-column: 1/15;
+            }
+
+            .description {
+                width: 90%;
+            }
+        }
+
+        &__formation {
+            grid-column: 1/15;
+            border-left: none;
+        }
+
+        &__formation {
+            &--box {
+                .listItem {
+                    &__year {
+                        grid-column: 1/2;
+                        color: $primary-color;
+                        font-size: $font-size-description;
+                        min-width: 42px;
+                    }
+
+                    &__stickAndPoint {
+                        grid-column: 2/3;
+
+                        &--stick {
+                            height: 110%;
+                            width: 2px;
+                        }
+
+                        &--point {
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
+
+                    &__formationInfo {
+                        grid-column: 3/10;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-up(mobile) {
 }

@@ -11,11 +11,11 @@ const App = (): JSX.Element => {
     <main className="app">
       <NavBar />
       <Header />
-      <SideBar />
       <CardList />
       <TechnologiesIcons />
       <Experience />
       <Contact />
+      <SideBar />
     </main>
   )
 }

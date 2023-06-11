@@ -1,8 +1,8 @@
-
-.technologiesList{
+.technologiesList {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 150px;
+    grid-column: 2/14;
 
     &__title {
         font-size: 24px;
@@ -13,19 +13,33 @@
         letter-spacing: 0.04em;
     }
 
-    &__box{
+    &__box {
         display: flex;
         flex-direction: row;
         justify-content: center;
         font-size: 48px;
         padding-top: 50px;
+
         svg {
-            margin: 0 24px;
+            margin: 0 2%;
             will-change: filter;
-            transition: all .3s;
+            transition: all 0.3s;
         }
-        svg:hover{
+
+        svg:hover {
             filter: drop-shadow(0 0 20px $primary-color);
         }
     }
 }
+
+@include media-up(lweb) {}
+
+@include media-up(web) {}
+
+@include media-up(tablet) {
+    .technologiesList {
+        grid-column: 2/13;
+    }
+}
+
+@include media-up(mobile) {}

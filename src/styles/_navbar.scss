@@ -1,46 +1,117 @@
 .navbar {
-  font-family: $secondary-font;
-  font-size: $font-size-description;
+    font-family: $secondary-font;
+    font-size: $font-size-description;
+    grid-column: 2/14;
 
-  &__ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  &--item {
-    margin-left: 35px;
-    transition: all .3s ease-out;
-
-    &__button {
-      font-size: 16px;
-      font-family: $secondary-font;
-      background-color: $primary-color;
-      color: $terciary-color;
-      border-radius: 8px;
-      padding: 8px 22px;
-      transition: all .3s ease-out;
-
-      &:hover {
-        transition: all .3s ease-out;
-        background-color: $primary-color-light;
-        cursor: pointer;
-      }
+    .navbar_menu,
+    .x {
+        display: none;
     }
 
-    &:hover {
-      color: $primary-color;
-      cursor: pointer;
+    &__ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        justify-content: end;
+        align-items: center;
     }
 
-    &__stick {
-      height: 22px;
-      width: 3px;
-      background-color: $primary-color-light;
-      box-shadow: 0px 0px 5px 1px $primary-color-light;
-      border-radius: 5px;
+    &--item {
+        margin-left: 35px;
+        transition: all 0.3s ease-out;
+
+        &__button {
+            font-size: 16px;
+            font-family: $secondary-font;
+            background-color: $primary-color;
+            color: $terciary-color;
+            border-radius: 8px;
+            padding: 8px 22px;
+            transition: all 0.3s ease-out;
+            border-bottom: solid 1px #ffffff;
+
+            &:hover {
+                transition: all 0.3s ease-out;
+                background-color: $primary-color-light;
+                cursor: pointer;
+            }
+        }
+
+        &:hover {
+            color: $primary-color;
+            cursor: pointer;
+        }
+
+        &__stick {
+            height: 22px;
+            width: 3px;
+            background-color: $primary-color-light;
+            box-shadow: 0px 0px 5px 1px $primary-color-light;
+            border-radius: 5px;
+        }
     }
-  }
+}
+
+@include media-up(lweb) {
+}
+
+@include media-up(web) {
+}
+
+@include media-up(tablet) {
+    .navbar {
+        font-family: "Russo One", sans-serif;
+        font-size: 20px;
+        grid-column: 2/14;
+        display: flex;
+        border-radius: 8px;
+        justify-content: end;
+
+        .navbar_menu {
+            display: flex;
+            svg {
+                font-size: 30px;
+            }
+        }
+
+        .x {
+            font-size: 30px;
+        }
+
+        .not_deployed_nav {
+            display: none;
+        }
+
+        .deployed {
+            display: flex;
+            margin: 0 auto;
+            width: 100%;
+            justify-content: end;
+        }
+
+        &__ul {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &--item {
+            transition: all 0.3s ease-out;
+            margin: 15px 0px 15px 0;
+            height: 40px;
+            align-items: center;
+            display: flex;
+
+            &__button {
+                font-size: 16px;
+            }
+
+            .stick_navbar {
+                height: 3px;
+                width: 40px;
+            }
+        }
+    }
+}
+
+@include media-up(mobile) {
 }
