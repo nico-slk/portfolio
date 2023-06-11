@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
-import { SlMenu } from 'react-icons/Sl'
-import { TfiClose } from 'react-icons/Tfi'
+import { SlMenu } from 'react-icons/sl'
+import { TfiClose } from 'react-icons/tfi'
 import { getLanguage, setLanguage } from '../../services/firebase/languageService';
 import { type NavLanguage } from '../../interfaces/types';
 
