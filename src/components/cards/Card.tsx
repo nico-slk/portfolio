@@ -85,7 +85,7 @@ export const Card = ({
             if (project.link !== '') {
               window.open(`http://${project.link}`, '_blank')
             }
-          }}>
+          }} nameClass=''>
             {lang.buttonValue}
             <img
               src={forwardIcon}
