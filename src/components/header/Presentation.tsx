@@ -21,7 +21,7 @@ export const Presentation = ({
         </p>
         <Button fn={async (): Promise<any> => {
           window.open(await downloadResume(), '_blank')
-        }} >
+        }} nameClass=''>
           {langButton.buttonValue}  <img src={downloadCV} alt="" />
         </Button>
       </div>
