@@ -33,8 +33,10 @@ const ExperienceDetail = ({
         <div className='experience__box--experienceDetail--lastExperience' key={e.position}>
           <div className='lastCompany' >
             <span className='lastCompany__role'>{e.position.toUpperCase()}</span>
-            <div className='lastCompany__underline'></div>
-            <span className='lastCompany__companyName'>{e.company.toUpperCase()}</span>
+            <div className='lastCompany__underline-companyName'>
+              <div className='lastCompany__underline'></div>
+              <span className='lastCompany__companyName'>{e.company.toUpperCase()}</span>
+            </div>
           </div>
           <div className='date'>{e.startDate_ES} - {e.endDate_ES}</div>
           <div className='description'>

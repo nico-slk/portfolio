@@ -15,6 +15,12 @@
     }
 }
 
+.introduction {
+    img {
+        width: 100%;
+    }
+}
+
 .presentation {
     padding: 0 70px 0 70px;
 
@@ -98,7 +104,8 @@
                 color: $terciary-color;
 
                 img {
-                    filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(327deg) brightness(0%) contrast(100%);
+                    filter: invert(0%) sepia(0%) saturate(7500%)
+                        hue-rotate(327deg) brightness(0%) contrast(100%);
                 }
             }
         }
@@ -107,10 +114,7 @@
 
 @include media-up(xlweb) {
     .header {
-
-        // background-color: rgb(81, 219, 38);
         .introduction img {
-            width: 80%;
             padding: 0;
             margin: 0 auto;
         }
@@ -134,7 +138,6 @@
 
 @include media-up(web) {
     .header {
-
         &--introduction {
             align-content: start;
         }
@@ -145,13 +148,16 @@
         margin: 0;
 
         &--box {
+            align-content: start;
             &__myName {
-                font-size: 24px;
+                font-size: 20px;
 
                 &--underline,
                 &--underlineEN {
                     width: 180px;
                     margin-left: 120px;
+                    width: 150px;
+                    margin-left: 100px;
                 }
             }
 
@@ -163,18 +169,13 @@
             &__myDescription {
                 font-size: 14px;
             }
-
-            &__cvDownloadButton {
-                justify-self: center;
-                width: 140px;
-                height: 44px;
-            }
         }
     }
 }
 
 @include media-up(tablet) {
     .header {
+        margin-top: 70px;
         &__content {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -188,11 +189,24 @@
             display: none;
         }
     }
+    .presentation {
+        width: 95%;
+        margin: 0;
+
+        &--box {
+            &__myName {
+                &--underline,
+                &--underlineEN {
+                    width: 150px;
+                    margin-left: 100px;
+                }
+            }
+        }
+    }
 }
 
 @include media-up(mobile) {
     .header {
-
         .introduction {
             display: none;
         }
@@ -200,11 +214,10 @@
         .presentation {
             &--box {
                 &__myName {
-                    align-items: center;
+                    align-items: start;
                 }
-
-                &__myTitle {
-                    text-align: center;
+                &__cvDownloadButton {
+                    justify-self: start;
                 }
             }
         }

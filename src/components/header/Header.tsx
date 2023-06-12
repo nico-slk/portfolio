@@ -19,10 +19,10 @@ const Header = ({
 
   const handleLanguageChange = (): void => {
     const espButton: ButtonValue = {
-      buttonValue: 'Descargar CV'
+      buttonValue: 'DESCARGAR CV'
     }
     const engButton: ButtonValue = {
-      buttonValue: 'Download Resume'
+      buttonValue: 'DOWNLOAD RESUME'
     }
     const esp: HeaderLanguage = {
       preTitle: 'Hola! Soy ',

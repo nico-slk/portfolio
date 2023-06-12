@@ -16,7 +16,7 @@ const NavBar = ({
     contact: '',
     language: ''
   })
-  const [deployed, setDeployed] = useState<string>('deployed')
+  const [deployed, setDeployed] = useState<string>('not-deployed')
   const handleNavigation = (selector: string): void => {
     const element = document.querySelector<HTMLElement>(selector);
     if (element !== null) window.scroll(0, element?.offsetTop)

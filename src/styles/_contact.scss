@@ -84,7 +84,7 @@
                             border-radius: 10px;
                             padding-left: 24px;
                             font-weight: 400;
-                            font-size: $font-size-description;
+                            font-size: 20px;
                             height: 56px;
 
                             &:focus {
@@ -109,16 +109,12 @@
 
                                 .fileMessage__normal {
                                     margin: 10px 0 0 0;
-                                    font-size: 14px;
+                                    font-size: 12px;
                                     font-weight: 400;
                                     text-align: start;
                                 }
 
-                                .fileMessage__fileSizeError {
-                                    @extend .fileMessage__normal;
-                                    color: rgb(253, 126, 126);
-                                }
-
+                                .fileMessage__fileSizeError,
                                 .fileMessage__fileExtentionError {
                                     @extend .fileMessage__normal;
                                     color: rgb(253, 126, 126);
@@ -126,7 +122,13 @@
                             }
 
                             &__addFile {
+                                @extend .presentation--box__cvDownloadButton;
+                                font-size: 14px;
+                            }
+
+                            .submit {
                                 color: rgba(255, 253, 221, 0.7);
+                                font-size: 14px;
                                 width: 200px;
                                 height: 50px;
                                 display: flex;
@@ -144,10 +146,6 @@
                                     border: solid 2px $terciary-color;
                                     background-color: $primary-color-light;
                                 }
-                            }
-
-                            &__submit {
-                                @extend .presentation--box__cvDownloadButton;
                             }
                         }
                     }
@@ -224,16 +222,26 @@
                 &--form {
                     .form {
                         &__input {
+                            &--name,
+                            &--email {
+                                font-size: $font-size-description;
+                            }
                             &--buttons {
                                 &__addFile {
                                     width: 140px;
                                     height: 44px;
                                 }
 
-                                &__submit {
+                                .submit {
                                     width: 140px;
                                     height: 44px;
                                 }
+                            }
+                        }
+
+                        &__textArea {
+                            &--message {
+                                font-size: 18px;
                             }
                         }
                     }
@@ -304,10 +312,16 @@
 
 @include media-up(mobile) {
     .contact {
+        &__titleBox {
+            &--title {
+                font-size: 28px;
+            }
+        }
         &__box {
             .contact__message {
                 &--textMessage {
-                    font-size: 14px;
+                    font-size: 12px;
+                    margin: 0;
                 }
 
                 &--links {
