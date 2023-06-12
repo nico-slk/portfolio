@@ -81,9 +81,11 @@
     }
 }
 
-@include media-up(lweb) {}
+@include media-up(lweb) {
+}
 
-@include media-up(web) {}
+@include media-up(web) {
+}
 
 @include media-up(tablet) {
     .cardList {
@@ -96,4 +98,21 @@
     }
 }
 
-@include media-up(mobile) {}
+@include media-up(mobile) {
+    .cardList {
+        &__titleBox {
+            &--title {
+                font-size: 28px;
+            }
+        }
+    }
+    .card {
+        &__box {
+            &--content {
+                &__title {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}

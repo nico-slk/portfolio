@@ -6,6 +6,7 @@ export interface ContactForm {
 }
 
 export interface ButtonProps {
+  nameClass: string
   fn: () => any
   children: any
 }

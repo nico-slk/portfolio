@@ -39,11 +39,16 @@
                     &__role {
                         font-family: $secondary-font;
                         color: $primary-color;
+                        padding-right: 10px;
+                    }
+
+                    &__underline-companyName {
+                        display: inherit;
                     }
 
                     &__underline {
                         @extend .navbar--item__stick;
-                        margin: 0 10px;
+                        margin: 0 10px 0 0;
                         height: 28px;
                     }
 
@@ -232,4 +237,34 @@
 }
 
 @include media-up(mobile) {
+    .experience {
+        &__box {
+            .description {
+                font-size: 12px;
+            }
+            &--experienceDetail {
+                &--lastExperience {
+                    .lastCompany {
+                        &__role {
+                            font-size: 28px;
+                        }
+
+                        &__companyName {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+        &__titleBox {
+            &--title {
+                font-size: 28px;
+            }
+        }
+        &__formation {
+            &--title {
+                font-size: 28px;
+            }
+        }
+    }
 }

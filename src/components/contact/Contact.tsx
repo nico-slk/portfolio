@@ -44,7 +44,7 @@ const Contact = ({
       name: 'Nombre',
       email: 'Email',
       message: 'Mensaje',
-      uploadFile: 'Subir archivo',
+      uploadFile: 'SUBIR ARCHIVO',
       noFileSelected: 'No has seleccionado ningun archivo',
       placeholderName: 'Ingresa tu nombre. (Obligatorio)',
       placeholderEmail: 'Ingresa tu email. (Obligatorio)',
@@ -216,7 +216,7 @@ const Contact = ({
                     <input className='' type="file" name="file" id="fileInput" onChange={handleFileChange} />
                     {fileInfo}
                   </div>
-                  <Button fn={(): any => { }} >
+                  <Button fn={(): any => { }} nameClass="submit" >
                     {langButton.buttonValue}
                   </Button>
                 </div>

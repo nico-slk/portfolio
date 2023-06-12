@@ -42,12 +42,15 @@
 }
 
 @include media-up(web) {
-}
-
-@include media-up(tablet) {
     .floating-sidebar {
         grid-column: 13/15;
     }
+}
+
+@include media-up(tablet) {
+    // .floating-sidebar {
+    //     grid-column: 13/15;
+    // }
 }
 
 @include media-up(mobile) {
