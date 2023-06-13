@@ -5,8 +5,6 @@ export const Button = ({
   children,
   fn
 }: ButtonProps): JSX.Element => {
-  console.log(nameClass);
-
   return (
     <button type="submit" className={`presentation--box__cvDownloadButton ${nameClass}`} onClick={fn}>
       {children}
