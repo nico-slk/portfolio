@@ -12,7 +12,7 @@ export const formationSlice = createSlice({
   reducers: {
     getExperiences: (state, action) => {
       state.isLoading = false
-      state.formation = action.payload;
+      state.formation = action.payload.sort((exp1: any, exp2: any) => (exp1.year > exp2.year) ? -1 : (exp1.year < exp2.year) ? 1 : 0);
     }
   }
 })
